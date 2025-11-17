@@ -24,7 +24,7 @@ namespace
 
 F4SE_PLUGIN_LOAD(const F4SE::LoadInterface* a_f4se)
 {
-	F4SE::Init(a_f4se, { .trampoline = true, .trampolineSize = 2048 });
+	F4SE::Init(a_f4se, { .trampoline = true, .trampolineSize = 512 });
 
 	Serialization::Register();
 
