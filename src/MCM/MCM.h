@@ -39,9 +39,9 @@ namespace MCM
 		class Runtime
 		{
 		public:
-			inline static bool bQuickBoy{ true };
-			inline static bool bQuickBoyTransition{ false };
-			inline static bool bPlayClose{ false };
+			inline static bool         bQuickBoy{ true };
+			inline static bool         bQuickBoyTransition{ false };
+			inline static bool         bPlayClose{ false };
 			inline static std::int32_t QuickBoyKey{ 0 };
 		};
 

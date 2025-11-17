@@ -286,7 +286,7 @@ private:
 			}
 
 		protected:
-			RE::NiPointer<RE::NiNode> model{ nullptr };
+			RE::NiPointer<RE::NiNode>        model{ nullptr };
 			inline static PipboyScreenModel* singleton{ nullptr };
 		};
 
@@ -444,7 +444,7 @@ private:
 			}
 
 		protected:
-			RE::NiPointer<RE::NiNode> model{ nullptr };
+			RE::NiPointer<RE::NiNode>                  model{ nullptr };
 			inline static PipboyBackgroundScreenModel* singleton{ nullptr };
 		};
 
@@ -467,7 +467,7 @@ private:
 						"Interface\\PipboyBackgroundMenu16x10.swf"sv,
 						"Interface\\PipboyBackgroundMenu21x9.swf"sv);
 
-				const auto ScaleformManager = RE::BSScaleformManager::GetSingleton();
+				const auto                  ScaleformManager = RE::BSScaleformManager::GetSingleton();
 				[[maybe_unused]] const auto LoadMovieSuccess = ScaleformManager->LoadMovieEx(*this, MoviePath, "root.Menu_mc");
 				assert(LoadMovieSuccess);
 
@@ -538,8 +538,8 @@ private:
 					RE::UI_MENU_FLAGS::kRendersUnderPauseMenu);
 				depthPriority = RE::UI_DEPTH_PRIORITY::kStandard;
 
-				auto MoviePath = "Interface\\PipboyBackgroundMenuSmall.swf"sv;
-				const auto ScaleformManager = RE::BSScaleformManager::GetSingleton();
+				auto                        MoviePath = "Interface\\PipboyBackgroundMenuSmall.swf"sv;
+				const auto                  ScaleformManager = RE::BSScaleformManager::GetSingleton();
 				[[maybe_unused]] const auto LoadMovieSuccess = ScaleformManager->LoadMovieEx(*this, MoviePath, "root.Menu_mc");
 				assert(LoadMovieSuccess);
 
@@ -695,9 +695,9 @@ private:
 					}
 
 					// members
-					void* sink;   // 00
-					bool listen;  // 08
-					bool third;   // 09
+					void* sink;    // 00
+					bool  listen;  // 08
+					bool  third;   // 09
 				};
 
 				static_assert(sizeof(functor_t) == 0x10);
@@ -910,8 +910,8 @@ private:
 	private:
 		template <bool COLOR>
 		static void AddMenuToPipboy(
-			[[maybe_unused]] RE::PipboyManager* a_this,
-			[[maybe_unused]] RE::IMenu& a_menu,
+			[[maybe_unused]] RE::PipboyManager*       a_this,
+			[[maybe_unused]] RE::IMenu&               a_menu,
 			[[maybe_unused]] const RE::NiRect<float>& a_standVP,
 			[[maybe_unused]] const RE::NiRect<float>& a_powerVP)
 		{
@@ -954,9 +954,9 @@ private:
 	private:
 		static bool PickScreen(
 			[[maybe_unused]] RE::NiCamera* a_camera,
-			[[maybe_unused]] bool a_firstPersonSceneGraph,
-			[[maybe_unused]] float a_screenThickness,
-			[[maybe_unused]] float a_refractStrength)
+			[[maybe_unused]] bool          a_firstPersonSceneGraph,
+			[[maybe_unused]] float         a_screenThickness,
+			[[maybe_unused]] float         a_refractStrength)
 		{
 			if (detail::IsExempt())
 			{
@@ -980,10 +980,10 @@ private:
 	{
 	private:
 		static RE::NiNode* GetObjectByName(
-			[[maybe_unused]] RE::NiAVObject* a_scene,
+			[[maybe_unused]] RE::NiAVObject*    a_scene,
 			[[maybe_unused]] RE::BSFixedString* a_name,
-			[[maybe_unused]] bool a_testScenegraph,
-			[[maybe_unused]] bool a_defer)
+			[[maybe_unused]] bool               a_testScenegraph,
+			[[maybe_unused]] bool               a_defer)
 		{
 			if (detail::IsExempt())
 			{
@@ -1031,8 +1031,8 @@ private:
 	private:
 		static void SetViewport(
 			[[maybe_unused]] RE::Interface3D::Renderer* a_this,
-			[[maybe_unused]] Scaleform::GFx::Movie* a_ui,
-			[[maybe_unused]] const RE::NiRect<float>& a_viewport)
+			[[maybe_unused]] Scaleform::GFx::Movie*     a_ui,
+			[[maybe_unused]] const RE::NiRect<float>&   a_viewport)
 		{
 			if (detail::IsExempt())
 			{
@@ -1076,10 +1076,10 @@ private:
 	private:
 		static void SetCursorConstraintsRaw(
 			[[maybe_unused]] RE::MenuCursor* a_this,
-			[[maybe_unused]] std::uint32_t a_x,
-			[[maybe_unused]] std::uint32_t a_y,
-			[[maybe_unused]] std::uint32_t a_w,
-			[[maybe_unused]] std::uint32_t a_h)
+			[[maybe_unused]] std::uint32_t   a_x,
+			[[maybe_unused]] std::uint32_t   a_y,
+			[[maybe_unused]] std::uint32_t   a_w,
+			[[maybe_unused]] std::uint32_t   a_h)
 		{
 			if (detail::IsExempt())
 			{
@@ -1153,8 +1153,8 @@ private:
 	private:
 		static void PlayPipboyLoadHolotapeAnim(
 			[[maybe_unused]] RE::PipboyManager* a_this,
-			[[maybe_unused]] RE::BGSNote* a_holotape,
-			[[maybe_unused]] bool a_noAnim)
+			[[maybe_unused]] RE::BGSNote*       a_holotape,
+			[[maybe_unused]] bool               a_noAnim)
 		{
 			if (detail::IsExempt())
 			{
@@ -1192,7 +1192,7 @@ private:
 	{
 	private:
 		static void LowerPipboy(
-			[[maybe_unused]] RE::PipboyManager* a_this,
+			[[maybe_unused]] RE::PipboyManager*              a_this,
 			[[maybe_unused]] RE::PipboyManager::LOWER_REASON a_reason)
 		{
 			if (detail::IsExempt())
@@ -1218,8 +1218,8 @@ private:
 	{
 	private:
 		static RE::BSEventNotifyControl ProcessEvent(
-			[[maybe_unused]] RE::PipboyManager* a_this,
-			[[maybe_unused]] const RE::BSAnimationGraphEvent& a_event,
+			[[maybe_unused]] RE::PipboyManager*                             a_this,
+			[[maybe_unused]] const RE::BSAnimationGraphEvent&               a_event,
 			[[maybe_unused]] RE::BSTEventSource<RE::BSAnimationGraphEvent>* a_source)
 		{
 			if (MCM::Settings::Runtime::bQuickBoyTransition)
@@ -1259,7 +1259,7 @@ private:
 	{
 	private:
 		static RE::UI_MESSAGE_RESULTS ProcessMessage(
-			[[maybe_unused]] RE::IMenu* a_this,
+			[[maybe_unused]] RE::IMenu*     a_this,
 			[[maybe_unused]] RE::UIMessage& a_message)
 		{
 			if (detail::IsExempt())
@@ -1309,7 +1309,7 @@ private:
 	{
 	private:
 		static void PlayPipboyOpenAnim(
-			[[maybe_unused]] RE::PipboyManager* a_this,
+			[[maybe_unused]] RE::PipboyManager*       a_this,
 			[[maybe_unused]] const RE::BSFixedString& a_menu)
 		{
 			if (detail::IsExempt())
@@ -1368,7 +1368,7 @@ private:
 	private:
 		static void PlayPipboyCloseAnim(
 			[[maybe_unused]] RE::PipboyManager* a_this,
-			[[maybe_unused]] bool a_noAnim)
+			[[maybe_unused]] bool               a_noAnim)
 		{
 			if (detail::IsExempt())
 			{
@@ -1434,7 +1434,7 @@ private:
 	private:
 		static void StartPipboyMode(
 			[[maybe_unused]] RE::PlayerCamera* a_this,
-			[[maybe_unused]] bool a_forcePipboyModeCamera)
+			[[maybe_unused]] bool              a_forcePipboyModeCamera)
 		{
 			if (detail::IsExempt())
 			{
@@ -1473,9 +1473,9 @@ private:
 	{
 	private:
 		static bool SetWeaponBonesCulled(
-			[[maybe_unused]] RE::AIProcess* a_this,
-			[[maybe_unused]] RE::Actor& a_actor,
-			[[maybe_unused]] bool a_stateToSet,
+			[[maybe_unused]] RE::AIProcess*       a_this,
+			[[maybe_unused]] RE::Actor&           a_actor,
+			[[maybe_unused]] bool                 a_stateToSet,
 			[[maybe_unused]] RE::WEAPON_CULL_TYPE a_type)
 		{
 			if (detail::IsExempt())
@@ -1495,8 +1495,8 @@ private:
 	{
 	private:
 		static bool DoAction(
-			[[maybe_unused]] RE::PlayerControls* a_this,
-			[[maybe_unused]] RE::DEFAULT_OBJECT a_action,
+			[[maybe_unused]] RE::PlayerControls*             a_this,
+			[[maybe_unused]] RE::DEFAULT_OBJECT              a_action,
 			[[maybe_unused]] RE::ActionInput::ACTIONPRIORITY a_priority)
 		{
 			if (detail::IsExempt())
@@ -1517,7 +1517,7 @@ private:
 	private:
 		static void QueueShowPipboy(
 			[[maybe_unused]] RE::TaskQueueInterface* a_this,
-			[[maybe_unused]] RE::DEFAULT_OBJECT a_animType)
+			[[maybe_unused]] RE::DEFAULT_OBJECT      a_animType)
 		{
 			if (detail::IsExempt())
 			{
@@ -1553,7 +1553,7 @@ private:
 	private:
 		static void SetEnableDynamicResolution(
 			[[maybe_unused]] RE::BSGraphics::RenderTargetManager* a_this,
-			[[maybe_unused]] bool a_enableDynamicResolution)
+			[[maybe_unused]] bool                                 a_enableDynamicResolution)
 		{
 			return;
 		}
@@ -1590,7 +1590,7 @@ private:
 	{
 	private:
 		static bool ShouldHandleEvent(
-			[[maybe_unused]] RE::IMenu* a_this,
+			[[maybe_unused]] RE::IMenu*            a_this,
 			[[maybe_unused]] const RE::InputEvent* a_event)
 		{
 			return _ShouldHandleEvent0(a_this, a_event) && !MCM::Settings::Runtime::bQuickBoyTransition;
@@ -1603,7 +1603,7 @@ private:
 	{
 	private:
 		static void OnButtonEvent(
-			[[maybe_unused]] RE::IMenu* a_this,
+			[[maybe_unused]] RE::IMenu*             a_this,
 			[[maybe_unused]] const RE::ButtonEvent* a_event)
 		{
 			if (!MCM::Settings::Pipboy::bQuickBoyKey.GetValue())
@@ -1628,7 +1628,7 @@ private:
 	private:
 		static void SetModelScale(
 			[[maybe_unused]] RE::Inventory3DManager* a_this,
-			[[maybe_unused]] float a_scale)
+			[[maybe_unused]] float                   a_scale)
 		{
 			if (detail::IsExempt())
 			{
@@ -1646,8 +1646,8 @@ private:
 	private:
 		static void SetModelScreenPosition(
 			[[maybe_unused]] RE::Inventory3DManager* a_this,
-			[[maybe_unused]] const RE::NiPoint3& a_position,
-			[[maybe_unused]] bool a_screenCoords)
+			[[maybe_unused]] const RE::NiPoint3&     a_position,
+			[[maybe_unused]] bool                    a_screenCoords)
 		{
 			if (detail::IsExempt())
 			{
@@ -1713,8 +1713,8 @@ private:
 	private:
 		static void ShowPipboyLight(
 			[[maybe_unused]] RE::PlayerCharacter* a_this,
-			[[maybe_unused]] bool a_show,
-			[[maybe_unused]] bool a_skipEffects)
+			[[maybe_unused]] bool                 a_show,
+			[[maybe_unused]] bool                 a_skipEffects)
 		{
 			if (detail::IsExempt())
 			{
@@ -1732,10 +1732,10 @@ private:
 	{
 	private:
 		static void RenderEffect(
-			[[maybe_unused]] RE::ImageSpaceManager* a_this,
-			[[maybe_unused]] std::int32_t a_effect,  // ImageSpaceManager::ImageSpaceEffectEnum
-			[[maybe_unused]] std::int32_t a_sourceTarget,
-			[[maybe_unused]] std::int32_t a_destTarget,
+			[[maybe_unused]] RE::ImageSpaceManager*     a_this,
+			[[maybe_unused]] std::int32_t               a_effect,  // ImageSpaceManager::ImageSpaceEffectEnum
+			[[maybe_unused]] std::int32_t               a_sourceTarget,
+			[[maybe_unused]] std::int32_t               a_destTarget,
 			[[maybe_unused]] RE::ImageSpaceEffectParam* a_param)
 		{
 			if (MCM::Settings::Pipboy::bDisableFX && MCM::Settings::Pipboy::bDisableFXBoth)
