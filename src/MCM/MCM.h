@@ -20,20 +20,20 @@ namespace MCM
 			inline static REX::INI::Bool bKeepLowHealthIMod{ "Pipboy", "bKeepLowHealthIMod", false };
 			inline static REX::INI::Bool bPowerArmorOnly{ "Pipboy", "bPowerArmorOnly", false };
 
-			inline static REX::INI::F64 fBackgroundAlpha{ "Pipboy", "fBackgroundAlpha", 1.0 };
-			inline static REX::INI::F64 fPipboyMenuX{ "Pipboy", "fPipboyMenuX", 35.0 };
-			inline static REX::INI::F64 fPipboyMenuY{ "Pipboy", "fPipboyMenuY", 0.0 };
-			inline static REX::INI::F64 fPipboyMenuScale{ "Pipboy", "fPipboyMenuScale", 0.92 };
-			inline static REX::INI::F64 fPipboyBackgroundX{ "Pipboy", "fPipboyBackgroundX", 42.0 };
-			inline static REX::INI::F64 fPipboyBackgroundY{ "Pipboy", "fPipboyBackgroundY", 0.0 };
-			inline static REX::INI::F64 fPipboyBackgroundScale{ "Pipboy", "fPipboyBackgroundScale", 0.90 };
-			inline static REX::INI::F64 fTerminalMenuX{ "Pipboy", "fTerminalMenuX", 135.0 };
-			inline static REX::INI::F64 fTerminalMenuY{ "Pipboy", "fTerminalMenuY", 0.0 };
-			inline static REX::INI::F64 fTerminalMenuScale{ "Pipboy", "fTerminalMenuScale", 0.92 };
+			inline static REX::INI::F32 fBackgroundAlpha{ "Pipboy", "fBackgroundAlpha", 1.0f };
+			inline static REX::INI::F32 fPipboyMenuX{ "Pipboy", "fPipboyMenuX", 35.0f };
+			inline static REX::INI::F32 fPipboyMenuY{ "Pipboy", "fPipboyMenuY", 0.0f };
+			inline static REX::INI::F32 fPipboyMenuScale{ "Pipboy", "fPipboyMenuScale", 0.92f };
+			inline static REX::INI::F32 fPipboyBackgroundX{ "Pipboy", "fPipboyBackgroundX", 42.0f };
+			inline static REX::INI::F32 fPipboyBackgroundY{ "Pipboy", "fPipboyBackgroundY", 0.0f };
+			inline static REX::INI::F32 fPipboyBackgroundScale{ "Pipboy", "fPipboyBackgroundScale", 0.90f };
+			inline static REX::INI::F32 fTerminalMenuX{ "Pipboy", "fTerminalMenuX", 135.0f };
+			inline static REX::INI::F32 fTerminalMenuY{ "Pipboy", "fTerminalMenuY", 0.0f };
+			inline static REX::INI::F32 fTerminalMenuScale{ "Pipboy", "fTerminalMenuScale", 0.92f };
 
-			inline static REX::INI::F64 fPipboy3DItemScale{ "Pipboy", "fPipboy3DItemScale", 0.6 };
-			inline static REX::INI::F64 fPipboy3DItemScreenPosX{ "Pipboy", "fPipboy3DItemScreenPosX", 0.68 };
-			inline static REX::INI::F64 fPipboy3DItemScreenPosY{ "Pipboy", "fPipboy3DItemScreenPosY", 0.28 };
+			inline static REX::INI::F32 fPipboy3DItemScale{ "Pipboy", "fPipboy3DItemScale", 0.6f };
+			inline static REX::INI::F32 fPipboy3DItemScreenPosX{ "Pipboy", "fPipboy3DItemScreenPosX", 0.68f };
+			inline static REX::INI::F32 fPipboy3DItemScreenPosY{ "Pipboy", "fPipboy3DItemScreenPosY", 0.28f };
 		};
 
 		class Runtime

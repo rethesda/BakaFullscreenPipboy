@@ -12,7 +12,7 @@ namespace Papyrus
 		{
 			a_vm->BindNativeMethod(CLASS_NAME, "UpdateSettings", UpdateSettings);
 			a_vm->BindNativeMethod(CLASS_NAME, "ToggleQuickBoy", ToggleQuickBoy);
-			F4SE::log::info("Registered funcs for class {:s}"sv, CLASS_NAME);
+			REX::DEBUG("Registered funcs for class {:s}"sv, CLASS_NAME);
 
 			return true;
 		}

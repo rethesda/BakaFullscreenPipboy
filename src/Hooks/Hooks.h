@@ -7,88 +7,6 @@ class Hooks
 public:
 	static void Install()
 	{
-		hkGetByName<677805, 0x2F>::Install();                     // PipboyManager::~PipboyManager
-		hkGetByName<726763, 0x25>::Install();                     // PipboyManager::RaisePipboy
-		hkGetByName<309057, 0x11>::Install();                     // PipboyManager::EnableRenderer
-		hkGetByName<920509, 0x0C>::Install();                     // PipboyManager::GetRendererEnabled
-		hkGetByName<1159120, 0x0C>::Install();                    // PipboyManager::TriggerLargeBurst
-		hkGetByName<627297, 0x0C>::Install();                     // PipboyManager::TriggerSmallBurst
-		hkGetByName<95048, 0x0C>::Install();                      // PipboyManager::TriggerShudder
-		hkGetByName<1145232, 0x0C>::Install();                    // PipboyManager::TriggerVHold
-		hkGetByName<613441, 0x0C>::Install();                     // PipboyManager::TriggerVScan
-		hkGetByName<347152, 0x0C>::Install();                     // PipboyManager::TriggerFlicker
-		hkGetByName<662519, 0x15>::Install();                     // PipboyManager::DisablePipboyShader
-		hkGetByName<302903, 0x3A>::Install();                     // PipboyManager::ProcessLoweringReason
-		hkEnablePipboyShader<1477369, 0x28A>::Install();          // PipboyManager::InitPipboy
-		hkRefreshPipboyRenderSurface<190194, 0xBF>::Install();    // PlayerCharacter::SetRefraction
-		hkAddMenuToPipboy<300484, 0x16C, true>::Install();        // GenericMenu::GenericMenu
-		hkAddMenuToPipboy<1155030, 0x8A, false>::Install();       // PipboyHolotapeMenu::PipboyHolotapeMenu
-		hkAddMenuToPipboy<712982, 0x2E9, true>::Install();        // PipboyMenu::PipboyMenu
-		hkPickScreen<643948, 0x492>::Install();                   // PipboyMenu::ProcessMessage
-		hkPickScreen<926335, 0x92A>::Install();                   // TerminalMenu::ProcessMessage
-		hkGetObjectByName<643948, 0x455>::Install();              // PipboyMenu::ProcessMessage
-		hkGetObjectByName<926335, 0x8F2>::Install();              // TerminalMenu::ProcessMessage
-		hkGet3DRendererName<643948, 0x2E4>::Install();            // PipboyMenu::ProcessMessage
-		hkGet3DRendererName<188351, 0x257>::Install();            // TerminalMenu::InitMenu
-		hkSetViewport<188351, 0x43A>::Install();                  // TerminalMenu::InitMenu
-		hkSetCursorConstraintsRaw<726763, 0x7E>::Install();       // PipboyManager::RaisePipboy
-		hkSetCursorConstraintsRaw<726763, 0xA3>::Install();       // PipboyManager::RaisePipboy
-		hkSetCursorConstraintsRaw<1477369, 0x2D4>::Install();     // PipboyManager::InitPipboy
-		hkSetCursorConstraintsRaw<1477369, 0x2F9>::Install();     // PipboyManager::InitPipboy
-		hkSetCursorConstraintsRaw<900802, 0x4D>::Install();       // PipboyManager::UpdateCursorConstraint
-		hkSetCursorConstraintsRaw<900802, 0x75>::Install();       // PipboyManager::UpdateCursorConstraint
-		hkQActorInPowerArmor<809076, 0x29, true>::Install();      // PipboyManager::PlayPipboyGenericOpenAnim
-		hkQActorInPowerArmor<1444875, 0x46, true>::Install();     // PipboyManager::LowerPipboy
-		hkQActorInPowerArmor<726763, 0xC6, true>::Install();      // PipboyManager::RaisePipboy
-		hkQActorInPowerArmor<302903, 0x29, true>::Install();      // PipboyManager::ProcessLoweringReason
-		hkQActorInPowerArmorRW<1411297, 0x162>::Install();        // ReadyWeaponHandler::HandleEvent
-		hkPlayPipboyLoadHolotapeAnim<634650, 0x9E>::Install();    // PipboyInventoryMenu::PlayHolotape
-		hkPlayPipboyLoadHolotapeAnim<1411297, 0x1BD>::Install();  // ReadyWeaponHandler::HandleEvent
-		hkLowerPipboy<453340, 0xAC>::Install();                   // ExamineMenu::ShowInspectMenu
-		hkLowerPipboy<43450, 0x247>::Install();                   // BookMenu::OpenBookMenu
-		hkProcessEvent::Install();                                // PipboyManager::ProcessEvent
-		hkProcessMessageT<RE::PipboyHolotapeMenu>::Install();     // PipboyHolotapeMenu::ProcessMessage
-
-		hkPlayPipboyOpenAnim<943894, 0x134>::Install();           // UseItemCommand::DoExecute
-		hkPlayPipboyOpenAnim<743427, 0x20>::InstallJmp();         // PipboyManager::PlayPipboyOpenTerminalAnim
-		hkPlayPipboyOpenAnim<181358, 0x23F>::Install();           // PipboyHandler::HandleEvent
-		hkOnPipboyOpenAnim<477096, 0x185>::Install();             // PipboyManager::PlayPipboyLoadHolotapeAnim
-		hkOnPipboyOpenAnim<809076, 0xDA>::Install();              // PipboyManager::PlayPipboyGenericOpenAnim
-		hkOnPipboyOpenAnim<1546751, 0x26C1>::Install();           // TaskQueueInterface::TaskUnpackFunc
-		hkPlayPipboyCloseAnim<273179, 0x3A>::Install();           // GenericMenu::ProcessMessage
-		hkPlayPipboyCloseAnim<643948, 0x232>::Install();          // PipboyMenu::ProcessMessage
-		hkPlayPipboyCloseAnim<643948, 0x245>::Install();          // PipboyMenu::ProcessMessage
-		hkPlayPipboyCloseAnim<926335, 0x3E8>::Install();          // TerminalMenu::ProcessMessage
-		hkPlayPipboyCloseAnim<1299608, 0x48>::Install();          // PipboyManager::OnPipboyOpened
-		hkPlayPipboyCloseAnim<301794, 0x105>::Install();          // ActorEquipManager::UseObject
-		hkOnPipboyCloseAnim<1546751, 0x26FC>::Install();          // TaskQueueInterface::TaskUnpackFunc
-		hkStartPipboyMode<663900, 0x6A>::Install();               // PipboyManager::PlayPipboyOpenAnim
-		hkStartPipboyMode<477096, 0x106>::Install();              // PipboyManager::PlayPipboyLoadHolotapeAnim
-		hkStartPipboyMode<809076, 0xB0>::Install();               // PipboyManager::PlayPipboyGenericOpenAnim
-		hkStopPipboyMode<702357, 0x10>::Install();                // PipboyManager::OnPipboyOpenAnimFailed
-		hkStopPipboyMode<731410, 0x96>::Install();                // PipboyManager::ClosedownPipboy
-		hkSetWeaponBonesCulled<1477369, 0xA1>::Install();         // PipboyManager::InitPipboy
-		hkSetWeaponBonesCulled<731410, 0xE3>::Install();          // PipboyManager::ClosedownPipboy
-		hkDoAction<1299608, 0x13A>::Install();                    // PipboyManager::OnPipboyOpened
-		hkDoAction<1192694, 0x4C>::Install();                     // PipboyManager::StopExamineMenu
-		hkDoAction<1444875, 0x61>::Install();                     // PipboyManager::LowerPipboy
-		hkQueueShowPipboy<663900, 0x96>::Install();               // PipboyManager::PlayPipboyOpenAnim
-		hkQueueClosePipboy<273927, 0xB1>::Install();              // PipboyManager::PlayPipboyCloseAnim
-		hkSetEnableDynamicResolution<1231000, 0xF5>::Install();   // PipboyManager::OnPipboyCloseAnim
-		hkSetEnableDynamicResolution<1477369, 0x275>::Install();  // PipboyManager::InitPipboy
-		hkStopAnimationGraphListening<731410, 0xA6>::Install();   // PipboyManager::ClosedownPipboy
-		hkOnButtonEvent::Install();                               // PipboyMenu::OnButtonEvent
-		hkSetModelScale<1477369, 0x1D7>::Install();               // PipboyManager::InitPipboy
-		hkSetModelScreenPosition<1477369, 0x1B2>::Install();      // PipboyManager::InitPipboy
-		hkKillScreenEffects<643948, 0x6B>::Install();             // PipboyMenu::ProcessMessage
-		hkInstanceFormTrigger<1477369, 0x240>::Install();         // PipboyManager::InitPipboy
-		hkShowPipboyLight<1231000, 0x8A>::Install();              // PipboyManager::OnPipboyCloseAnim
-		hkShowPipboyLight<1477369, 0x342>::Install();             // PipboyManager::InitPipboy
-		hkRenderEffect<878870, 0x206>::Install();                 // Interface3D::Renderer::DrawPostFX
-	}
-
-	static void InstallPostLoad()
-	{
 		MCM::Settings::Update();
 
 		detail::PipboyScreenModel::Install();
@@ -96,12 +14,8 @@ public:
 
 		if (auto UI = RE::UI::GetSingleton())
 		{
-			UI->RegisterMenu(
-				"PipboyBackgroundMenu",
-				detail::PipboyBackgroundMenu::Create);
-			UI->RegisterMenu(
-				"PipboyBackgroundMenuSmall",
-				detail::PipboyBackgroundMenuSmall::Create);
+			UI->RegisterMenu("PipboyBackgroundMenu", detail::PipboyBackgroundMenu::Create);
+			UI->RegisterMenu("PipboyBackgroundMenuSmall", detail::PipboyBackgroundMenuSmall::Create);
 		}
 	}
 
@@ -201,9 +115,7 @@ public:
 			MCM::Settings::Runtime::bQuickBoy = true;
 			if (auto PlayerControls = RE::PlayerControls::GetSingleton())
 			{
-				PlayerControls->DoAction(
-					RE::DEFAULT_OBJECT::kActionPipboyClose,
-					RE::ActionInput::ACTIONPRIORITY::kTry);
+				PlayerControls->DoAction(RE::DEFAULT_OBJECT::kActionPipboyClose, RE::ActionInput::ACTIONPRIORITY::kTry);
 			}
 
 			if (auto Renderer = detail::PipboyScreenModel::GetRenderer())
@@ -215,12 +127,9 @@ public:
 					{
 						PipboyManager->inv3DModelManager.DisableRendering("InventoryMenu"sv);
 						PipboyManager->inv3DModelManager.str3DRendererName = detail::PipboyScreenModel::GetRendererName();
-						PipboyManager->inv3DModelManager.SetModelScale(
-							static_cast<float>(MCM::Settings::Pipboy::fPipboy3DItemScale.GetValue()));
+						PipboyManager->inv3DModelManager.SetModelScale(MCM::Settings::Pipboy::fPipboy3DItemScale);
 						PipboyManager->inv3DModelManager.SetModelScreenPosition(
-							{ static_cast<float>(MCM::Settings::Pipboy::fPipboy3DItemScreenPosX.GetValue()),
-						      static_cast<float>(MCM::Settings::Pipboy::fPipboy3DItemScreenPosY.GetValue()),
-						      1.0f },
+							{ MCM::Settings::Pipboy::fPipboy3DItemScreenPosX, MCM::Settings::Pipboy::fPipboy3DItemScreenPosY, 1.0f },
 							true);
 						PipboyManager->inv3DModelManager.EnableRendering("InventoryMenu"sv);
 						PipboyManager->UpdateCursorConstraint(false);
@@ -233,7 +142,7 @@ public:
 
 					PipboyMenu->SetViewportRect(detail::FullViewport);
 
-					RE::Scaleform::GFx::Value root;
+					Scaleform::GFx::Value root;
 					if (PipboyMenu->uiMovie && PipboyMenu->uiMovie->GetVariable(&root, "root"))
 					{
 						root.SetMember("x", MCM::Settings::Pipboy::fPipboyMenuX.GetValue());
@@ -268,16 +177,12 @@ private:
 					true
 				};
 
-				auto& ModelPath =
-					GetAspectRatioString(
-						"Interface\\Objects\\HUDGlassFlat.nif"sv,
-						"Interface\\Objects\\HUDGlassFlat16x10.nif"sv);
+				auto& ModelPath = GetAspectRatioString(
+					"Interface\\Objects\\HUDGlassFlat.nif"sv,
+					"Interface\\Objects\\HUDGlassFlat16x10.nif"sv);
 
 				RE::NiTexture::SetAllowDegrade(false);
-				RE::BSModelDB::Demand(
-					ModelPath.data(),
-					&model,
-					args);
+				RE::BSModelDB::Demand(ModelPath.data(), &model, args);
 				CreateRenderer();
 				RE::NiTexture::SetAllowDegrade(true);
 			}
@@ -343,11 +248,7 @@ private:
 					node->local.translate.z = setting::fUIFlatModel_TranslateZ->GetFloat();
 					node->Update(UpdateData);
 
-					if (auto Renderer = RE::Interface3D::Renderer::Create(
-							GetRendererName(),
-							RE::UI_DEPTH_PRIORITY::kMessage,
-							0.0f,
-							true))
+					if (auto Renderer = RE::Interface3D::Renderer::Create(GetRendererName(), RE::UI_DEPTH_PRIORITY::kMessage, 0.0f, true))
 					{
 						Renderer->MainScreen_SetBackgroundMode(RE::Interface3D::BackgroundMode::kLive);
 						Renderer->MainScreen_SetScreenAttached3D(node);
@@ -406,16 +307,12 @@ private:
 					true
 				};
 
-				auto& ModelPath =
-					GetAspectRatioString(
-						"Interface\\Objects\\HUDGlassFlat.nif"sv,
-						"Interface\\Objects\\HUDGlassFlat16x10.nif"sv);
+				auto& ModelPath = GetAspectRatioString(
+					"Interface\\Objects\\HUDGlassFlat.nif"sv,
+					"Interface\\Objects\\HUDGlassFlat16x10.nif"sv);
 
 				RE::NiTexture::SetAllowDegrade(false);
-				RE::BSModelDB::Demand(
-					ModelPath.data(),
-					&model,
-					args);
+				RE::BSModelDB::Demand(ModelPath.data(), &model, args);
 				CreateRenderer();
 				RE::NiTexture::SetAllowDegrade(true);
 
@@ -492,8 +389,7 @@ private:
 					Renderer->enabled = !Renderer->enabled;
 					if (Renderer->enabled)
 					{
-						Renderer->MainScreen_SetOpacityAlpha(
-							static_cast<float>(MCM::Settings::Pipboy::fBackgroundAlpha.GetValue()));
+						Renderer->MainScreen_SetOpacityAlpha(MCM::Settings::Pipboy::fBackgroundAlpha);
 						Renderer->MainScreen_SetPostAA(RE::PowerArmor::PlayerInPowerArmor());
 						PipboyBackgroundMenu::ShowMenu();
 					}
@@ -524,11 +420,7 @@ private:
 					node->local.translate.z = setting::fUIFlatModel_TranslateZ->GetFloat();
 					node->Update(UpdateData);
 
-					if (auto Renderer = RE::Interface3D::Renderer::Create(
-							GetRendererName(),
-							RE::UI_DEPTH_PRIORITY::kLoadingMenu,
-							0.0f,
-							true))
+					if (auto Renderer = RE::Interface3D::Renderer::Create(GetRendererName(), RE::UI_DEPTH_PRIORITY::kLoadingMenu, 0.0f, true))
 					{
 						Renderer->MainScreen_SetBackgroundMode(RE::Interface3D::BackgroundMode::kLive);
 						Renderer->MainScreen_SetScreenAttached3D(node);
@@ -576,11 +468,10 @@ private:
 						"Interface\\PipboyBackgroundMenu21x9.swf"sv);
 
 				const auto ScaleformManager = RE::BSScaleformManager::GetSingleton();
-				[[maybe_unused]] const auto LoadMovieSuccess =
-					ScaleformManager->LoadMovieEx(*this, MoviePath, "root.Menu_mc");
+				[[maybe_unused]] const auto LoadMovieSuccess = ScaleformManager->LoadMovieEx(*this, MoviePath, "root.Menu_mc");
 				assert(LoadMovieSuccess);
 
-				filterHolder = RE::msvc::make_unique<RE::BSGFxShaderFXTarget>(*uiMovie, "root.Menu_mc.Background_mc");
+				filterHolder = std::make_unique<RE::BSGFxShaderFXTarget>(*uiMovie, "root.Menu_mc.Background_mc");
 				if (filterHolder)
 				{
 					filterHolder->CreateAndSetFiltersToColor(0, 0, 0, 1.0f);
@@ -602,17 +493,13 @@ private:
 
 				if (auto UIMessageQueue = RE::UIMessageQueue::GetSingleton())
 				{
-					if (!MCM::Settings::Pipboy::bBackgroundSmall.GetValue())
+					if (!MCM::Settings::Pipboy::bBackgroundSmall)
 					{
-						UIMessageQueue->AddMessage(
-							"PipboyBackgroundMenu",
-							RE::UI_MESSAGE_TYPE::kShow);
+						UIMessageQueue->AddMessage("PipboyBackgroundMenu", RE::UI_MESSAGE_TYPE::kShow);
 					}
 					else
 					{
-						UIMessageQueue->AddMessage(
-							"PipboyBackgroundMenuSmall",
-							RE::UI_MESSAGE_TYPE::kShow);
+						UIMessageQueue->AddMessage("PipboyBackgroundMenuSmall", RE::UI_MESSAGE_TYPE::kShow);
 					}
 				}
 			}
@@ -626,17 +513,13 @@ private:
 
 				if (auto UIMessageQueue = RE::UIMessageQueue::GetSingleton())
 				{
-					if (!MCM::Settings::Pipboy::bBackgroundSmall.GetValue())
+					if (!MCM::Settings::Pipboy::bBackgroundSmall)
 					{
-						UIMessageQueue->AddMessage(
-							"PipboyBackgroundMenu",
-							RE::UI_MESSAGE_TYPE::kHide);
+						UIMessageQueue->AddMessage("PipboyBackgroundMenu", RE::UI_MESSAGE_TYPE::kHide);
 					}
 					else
 					{
-						UIMessageQueue->AddMessage(
-							"PipboyBackgroundMenuSmall",
-							RE::UI_MESSAGE_TYPE::kHide);
+						UIMessageQueue->AddMessage("PipboyBackgroundMenuSmall", RE::UI_MESSAGE_TYPE::kHide);
 					}
 				}
 			}
@@ -657,11 +540,10 @@ private:
 
 				auto MoviePath = "Interface\\PipboyBackgroundMenuSmall.swf"sv;
 				const auto ScaleformManager = RE::BSScaleformManager::GetSingleton();
-				[[maybe_unused]] const auto LoadMovieSuccess =
-					ScaleformManager->LoadMovieEx(*this, MoviePath, "root.Menu_mc");
+				[[maybe_unused]] const auto LoadMovieSuccess = ScaleformManager->LoadMovieEx(*this, MoviePath, "root.Menu_mc");
 				assert(LoadMovieSuccess);
 
-				filterHolder = RE::msvc::make_unique<RE::BSGFxShaderFXTarget>(*uiMovie, "root.Menu_mc.Background_mc");
+				filterHolder = std::make_unique<RE::BSGFxShaderFXTarget>(*uiMovie, "root.Menu_mc.Background_mc");
 				if (filterHolder)
 				{
 					filterHolder->CreateAndSetFiltersToColor(0, 0, 0, 1.0f);
@@ -711,18 +593,14 @@ private:
 							{
 								PipboyManager->inv3DModelManager.SetModelScale(setting::fPipboy3DItemPAScale->GetFloat());
 								PipboyManager->inv3DModelManager.SetModelScreenPosition(
-									{ setting::fPipboy3DItemPAScreenPosX->GetFloat(),
-								      setting::fPipboy3DItemPAScreenPosY->GetFloat(),
-								      1.0f },
+									{ setting::fPipboy3DItemPAScreenPosX->GetFloat(), setting::fPipboy3DItemPAScreenPosY->GetFloat(), 1.0f },
 									true);
 							}
 							else
 							{
 								PipboyManager->inv3DModelManager.SetModelScale(setting::fPipboy3DItemPAScale->GetFloat());
 								PipboyManager->inv3DModelManager.SetModelScreenPosition(
-									{ setting::fPipboy3DItemScreenPosX->GetFloat(),
-								      setting::fPipboy3DItemScreenPosY->GetFloat(),
-								      1.0f },
+									{ setting::fPipboy3DItemScreenPosX->GetFloat(), setting::fPipboy3DItemScreenPosY->GetFloat(), 1.0f },
 									true);
 							}
 							PipboyManager->inv3DModelManager.EnableRendering("InventoryMenu"sv);
@@ -768,19 +646,52 @@ private:
 				}
 
 			private:
-				// clang-format off
 				struct functor_t
 				{
+				private:
+					// clang-format off
+					static void RegisterSink(void* a_source, void* a_sink)
+					{
+						using func_t = decltype(&functor_t::RegisterSink);
+						static REL::Relocation<func_t> func{ REL::ID(2201528) };
+						return func(a_source, a_sink);
+					}
+
+					static void UnregisterSink(void* a_source, void* a_sink)
+					{
+						using func_t = decltype(&functor_t::UnregisterSink);
+						static REL::Relocation<func_t> func{ REL::ID(2201532) };
+						return func(a_source, a_sink);
+					}
+
+					// clang-format on
+
 				public:
-					functor_t(bool a_listen, bool a_third = true) : listen(a_listen), third(a_third) {
+					functor_t(bool a_listen, bool a_third = true)
+					{
 						sink = QuickBoyAnimationHandler::GetSingleton();
+						listen = a_listen;
+						third = a_third;
 					}
 
 					bool operator()(const RE::BSTSmartPointer<RE::BShkbAnimationGraph>& a_graph)
 					{
-						using func_t = bool(functor_t::*)(const RE::BSTSmartPointer<RE::BShkbAnimationGraph>&);
-						REL::Relocation<func_t> func{ REL::ID(348781) };
-						return func(this, a_graph);
+						if (a_graph && !this->third)
+						{
+							if (auto source = REX::ADJUST_POINTER<void>(a_graph.get(), 0x68))
+							{
+								if (this->listen)
+								{
+									RegisterSink(source, this->sink);
+									this->third = false;
+									return true;
+								}
+								UnregisterSink(source, this->sink);
+							}
+						}
+
+						this->third = false;
+						return true;
 					}
 
 					// members
@@ -788,14 +699,13 @@ private:
 					bool listen;  // 08
 					bool third;   // 09
 				};
-				static_assert(sizeof(functor_t) == 0x10);
 
-				// clang-format on
+				static_assert(sizeof(functor_t) == 0x10);
 
 				static void ForEachAnimationGraph(RE::BSAnimationGraphManager* a_this, functor_t& a_functor)
 				{
 					using func_t = decltype(&ForEachAnimationGraph);
-					REL::Relocation<func_t> func{ REL::ID(684075) };
+					REL::Relocation<func_t> func{ REL::ID(2225494) };
 					return func(a_this, a_functor);
 				}
 			};
@@ -840,7 +750,7 @@ private:
 
 			if (!a_menu->filterHolder)
 			{
-				a_menu->filterHolder = RE::msvc::make_unique<RE::BSGFxShaderFXTarget>(*a_menu->uiMovie, "root1");
+				a_menu->filterHolder = std::make_unique<RE::BSGFxShaderFXTarget>(*a_menu->uiMovie, "root1");
 				a_menu->shaderFXObjects.push_back(a_menu->filterHolder.get());
 			}
 
@@ -911,55 +821,49 @@ private:
 		inline static REL::Relocation<RE::SettingT<RE::INISettingCollection>*> fUIFlatModel_TranslateZ{ REL::ID(48328) };
 	};
 
-	template <std::uint64_t ID, std::ptrdiff_t OFF>
 	class hkGetByName
 	{
-	public:
-		static void Install()
-		{
-			static REL::Relocation<std::uintptr_t> target{ REL::ID(ID), OFF };
-			auto& trampoline = F4SE::GetTrampoline();
-			_GetByName = trampoline.write_call<5>(target.address(), GetByName);
-		}
-
 	private:
 		static RE::Interface3D::Renderer* GetByName(
 			[[maybe_unused]] const RE::BSFixedString& a_name)
 		{
 			if (detail::IsExempt())
 			{
-				return _GetByName(a_name);
+				return _GetByName00(a_name);
 			}
 
 			if (a_name != "PipboyMenu"sv)
 			{
-				return _GetByName(a_name);
+				return _GetByName00(a_name);
 			}
 
 			return detail::PipboyScreenModel::GetRenderer();
 		}
 
-		inline static REL::Relocation<decltype(&hkGetByName::GetByName)> _GetByName;
+		inline static REL::Hook _GetByName00{ REL::ID(2225504), 0x36, GetByName };  // PipboyManager::~PipboyManager
+		inline static REL::Hook _GetByName01{ REL::ID(2225455), 0x25, GetByName };  // PipboyManager::RaisePipboy
+		inline static REL::Hook _GetByName02{ REL::ID(2225458), 0x9D, GetByName };  // PipboyManager::OnPipboyClosed
+		inline static REL::Hook _GetByName03{ REL::ID(2225468), 0x11, GetByName };  // PipboyManager::EnableRenderer
+		inline static REL::Hook _GetByName04{ REL::ID(2225469), 0x0C, GetByName };  // PipboyManager::GetRendererEnabled
+		inline static REL::Hook _GetByName05{ REL::ID(2225472), 0x0C, GetByName };  // PipboyManager::TriggerLargeBurst
+		inline static REL::Hook _GetByName06{ REL::ID(2225473), 0x0C, GetByName };  // PipboyManager::TriggerSmallBurst
+		inline static REL::Hook _GetByName07{ REL::ID(2225474), 0x0C, GetByName };  // PipboyManager::TriggerShudder
+		inline static REL::Hook _GetByName08{ REL::ID(2225475), 0x0C, GetByName };  // PipboyManager::TriggerVHold
+		inline static REL::Hook _GetByName09{ REL::ID(2225476), 0x0C, GetByName };  // PipboyManager::TriggerVScan
+		inline static REL::Hook _GetByName0A{ REL::ID(2225477), 0x0C, GetByName };  // PipboyManager::TriggerFlicker
+		inline static REL::Hook _GetByName0B{ REL::ID(2225480), 0x9D, GetByName };  // PipboyManager::ClosedownPipboy
+		inline static REL::Hook _GetByName0C{ REL::ID(2225486), 0x3A, GetByName };  // PipboyManager::ProcessLoweringReason
 	};
 
-	template <std::uint64_t ID, std::ptrdiff_t OFF>
 	class hkEnablePipboyShader
 	{
-	public:
-		static void Install()
-		{
-			static REL::Relocation<std::uintptr_t> target{ REL::ID(ID), OFF };
-			auto& trampoline = F4SE::GetTrampoline();
-			_EnablePipboyShader = trampoline.write_call<5>(target.address(), EnablePipboyShader);
-		}
-
 	private:
 		static void EnablePipboyShader(
 			[[maybe_unused]] RE::PipboyManager* a_this)
 		{
 			if (detail::IsExempt())
 			{
-				return _EnablePipboyShader(a_this);
+				return _EnablePipboyShader0(a_this);
 			}
 
 			a_this->inv3DModelManager.str3DRendererName = detail::PipboyScreenModel::GetRendererName();
@@ -978,27 +882,18 @@ private:
 			Renderer->Enable();
 		}
 
-		inline static REL::Relocation<decltype(&hkEnablePipboyShader::EnablePipboyShader)> _EnablePipboyShader;
+		inline static REL::Hook _EnablePipboyShader0{ REL::ID(2225479), 0x28A, EnablePipboyShader };  // PipboyManager::InitPipboy
 	};
 
-	template <std::uint64_t ID, std::ptrdiff_t OFF>
 	class hkRefreshPipboyRenderSurface
 	{
-	public:
-		static void Install()
-		{
-			static REL::Relocation<std::uintptr_t> target{ REL::ID(ID), OFF };
-			auto& trampoline = F4SE::GetTrampoline();
-			_RefreshPipboyRenderSurface = trampoline.write_call<5>(target.address(), RefreshPipboyRenderSurface);
-		}
-
 	private:
 		static void RefreshPipboyRenderSurface(
 			[[maybe_unused]] RE::PipboyManager* a_this)
 		{
 			if (detail::IsExempt())
 			{
-				return _RefreshPipboyRenderSurface(a_this);
+				return _RefreshPipboyRenderSurface0(a_this);
 			}
 
 			if (MCM::Settings::Pipboy::bBackgroundBlur)
@@ -1007,21 +902,13 @@ private:
 			}
 		}
 
-		inline static REL::Relocation<decltype(&hkRefreshPipboyRenderSurface::RefreshPipboyRenderSurface)> _RefreshPipboyRenderSurface;
+		inline static REL::Hook _RefreshPipboyRenderSurface0{ REL::ID(2232942), 0xBF, RefreshPipboyRenderSurface };  // PlayerCharacter::SetRefraction
 	};
 
-	template <std::uint64_t ID, std::ptrdiff_t OFF, bool COLOR>
 	class hkAddMenuToPipboy
 	{
-	public:
-		static void Install()
-		{
-			static REL::Relocation<std::uintptr_t> target{ REL::ID(ID), OFF };
-			auto& trampoline = F4SE::GetTrampoline();
-			_AddMenuToPipboy = trampoline.write_call<5>(target.address(), AddMenuToPipboy);
-		}
-
 	private:
+		template <bool COLOR>
 		static void AddMenuToPipboy(
 			[[maybe_unused]] RE::PipboyManager* a_this,
 			[[maybe_unused]] RE::IMenu& a_menu,
@@ -1030,13 +917,13 @@ private:
 		{
 			if (detail::IsExempt())
 			{
-				return _AddMenuToPipboy(a_this, a_menu, a_standVP, a_powerVP);
+				return _AddMenuToPipboy0(a_this, a_menu, a_standVP, a_powerVP);
 			}
 
 			auto GameMenuBase = RE::fallout_cast<RE::GameMenuBase*>(&a_menu);
 			if (!GameMenuBase)
 			{
-				return _AddMenuToPipboy(a_this, a_menu, a_standVP, a_powerVP);
+				return _AddMenuToPipboy0(a_this, a_menu, a_standVP, a_powerVP);
 			}
 
 			if (MCM::Settings::Pipboy::bDisableFX && MCM::Settings::Pipboy::bUseColor)
@@ -1047,30 +934,23 @@ private:
 			a_menu.customRendererName = detail::PipboyScreenModel::GetRendererName();
 			GameMenuBase->SetViewportRect(detail::FullViewport);
 
-			RE::Scaleform::GFx::Value root;
+			Scaleform::GFx::Value root;
 			if (GameMenuBase->uiMovie && GameMenuBase->uiMovie->GetVariable(&root, "root"))
 			{
-				root.SetMember("x", MCM::Settings::Pipboy::fPipboyMenuX);
-				root.SetMember("y", MCM::Settings::Pipboy::fPipboyMenuY);
-				root.SetMember("scaleX", MCM::Settings::Pipboy::fPipboyMenuScale);
-				root.SetMember("scaleY", MCM::Settings::Pipboy::fPipboyMenuScale);
+				root.SetMember("x", MCM::Settings::Pipboy::fPipboyMenuX.GetValue());
+				root.SetMember("y", MCM::Settings::Pipboy::fPipboyMenuY.GetValue());
+				root.SetMember("scaleX", MCM::Settings::Pipboy::fPipboyMenuScale.GetValue());
+				root.SetMember("scaleY", MCM::Settings::Pipboy::fPipboyMenuScale.GetValue());
 			}
 		}
 
-		inline static REL::Relocation<decltype(&hkAddMenuToPipboy::AddMenuToPipboy)> _AddMenuToPipboy;
+		inline static REL::Hook _AddMenuToPipboy0{ REL::ID(2223215), 0x178, AddMenuToPipboy<true> };   // GenericMenu::GenericMenu
+		inline static REL::Hook _AddMenuToPipboy1{ REL::ID(2224049), 0x0E1, AddMenuToPipboy<false> };  // PipboyHolotapeMenu::PipboyHolotapeMenu
+		inline static REL::Hook _AddMenuToPipboy2{ REL::ID(2224179), 0x317, AddMenuToPipboy<true> };   // PipboyMenu::PipboyMenu
 	};
 
-	template <std::uint64_t ID, std::ptrdiff_t OFF>
 	class hkPickScreen
 	{
-	public:
-		static void Install()
-		{
-			static REL::Relocation<std::uintptr_t> target{ REL::ID(ID), OFF };
-			auto& trampoline = F4SE::GetTrampoline();
-			_PickScreen = trampoline.write_call<5>(target.address(), PickScreen);
-		}
-
 	private:
 		static bool PickScreen(
 			[[maybe_unused]] RE::NiCamera* a_camera,
@@ -1080,32 +960,24 @@ private:
 		{
 			if (detail::IsExempt())
 			{
-				return _PickScreen(a_camera, a_firstPersonSceneGraph, a_screenThickness, a_refractStrength);
+				return _PickScreen0(a_camera, a_firstPersonSceneGraph, a_screenThickness, a_refractStrength);
 			}
 
 			auto Renderer = detail::PipboyScreenModel::GetRenderer();
 			if (!Renderer || !Renderer->enabled || !Renderer->nativeAspect)
 			{
-				return _PickScreen(a_camera, a_firstPersonSceneGraph, a_screenThickness, a_refractStrength);
+				return _PickScreen0(a_camera, a_firstPersonSceneGraph, a_screenThickness, a_refractStrength);
 			}
 
-			return _PickScreen(Renderer->nativeAspect.get(), false, 0.0f, 0.0f);
+			return _PickScreen0(Renderer->nativeAspect.get(), false, 0.0f, 0.0f);
 		}
 
-		inline static REL::Relocation<decltype(&hkPickScreen::PickScreen)> _PickScreen;
+		inline static REL::Hook _PickScreen0{ REL::ID(2224181), 0x513, PickScreen };  // PipboyMenu::ProcessMessage
+		inline static REL::Hook _PickScreen1{ REL::ID(2224614), 0x8AD, PickScreen };  // TerminalMenu::ProcessMessage
 	};
 
-	template <std::uint64_t ID, std::ptrdiff_t OFF>
 	class hkGetObjectByName
 	{
-	public:
-		static void Install()
-		{
-			static REL::Relocation<std::uintptr_t> target{ REL::ID(ID), OFF };
-			auto& trampoline = F4SE::GetTrampoline();
-			_GetObjectByName = trampoline.write_call<5>(target.address(), GetObjectByName);
-		}
-
 	private:
 		static RE::NiNode* GetObjectByName(
 			[[maybe_unused]] RE::NiAVObject* a_scene,
@@ -1115,77 +987,61 @@ private:
 		{
 			if (detail::IsExempt())
 			{
-				return _GetObjectByName(a_scene, a_name, a_testScenegraph, a_defer);
+				return _GetObjectByName0(a_scene, a_name, a_testScenegraph, a_defer);
 			}
 
 			auto Renderer = detail::PipboyScreenModel::GetRenderer();
 			if (!Renderer || !Renderer->enabled || !Renderer->screenAttachedElementRoot)
 			{
-				return _GetObjectByName(a_scene, a_name, a_testScenegraph, a_defer);
+				return _GetObjectByName0(a_scene, a_name, a_testScenegraph, a_defer);
 			}
 
 			static RE::BSFixedString screenGeomName{ "HUDGlassFlat:0"sv };
-			return _GetObjectByName(
+			return _GetObjectByName0(
 				Renderer->screenAttachedElementRoot.get(),
 				&screenGeomName,
 				a_testScenegraph,
 				a_defer);
 		}
 
-		inline static REL::Relocation<decltype(&hkGetObjectByName::GetObjectByName)> _GetObjectByName;
+		inline static REL::Hook _GetObjectByName0{ REL::ID(2224181), 0x4D6, GetObjectByName };  // PipboyMenu::ProcessMessage
+		inline static REL::Hook _GetObjectByName1{ REL::ID(2224614), 0x875, GetObjectByName };  // TerminalMenu::ProcessMessage
 	};
 
-	template <std::uint64_t ID, std::ptrdiff_t OFF>
 	class hkGet3DRendererName
 	{
-	public:
-		static void Install()
-		{
-			static REL::Relocation<std::uintptr_t> target{ REL::ID(ID), OFF };
-			auto& trampoline = F4SE::GetTrampoline();
-			_Get3DRendererName = trampoline.write_call<5>(target.address(), Get3DRendererName);
-		}
-
 	private:
 		static const RE::BSFixedString& Get3DRendererName(
 			[[maybe_unused]] RE::PipboyManager* a_this)
 		{
 			if (detail::IsExempt())
 			{
-				return _Get3DRendererName(a_this);
+				return _Get3DRendererName0(a_this);
 			}
 
 			return detail::PipboyScreenModel::GetRendererName();
 		}
 
-		inline static REL::Relocation<decltype(&hkGet3DRendererName::Get3DRendererName)> _Get3DRendererName;
+		inline static REL::Hook _Get3DRendererName0{ REL::ID(2224181), 0x365, Get3DRendererName };  // PipboyMenu::ProcessMessage
+		inline static REL::Hook _Get3DRendererName1{ REL::ID(2224616), 0x25F, Get3DRendererName };  // TerminalMenu::InitMenu
 	};
 
-	template <std::uint64_t ID, std::ptrdiff_t OFF>
 	class hkSetViewport
 	{
-	public:
-		static void Install()
-		{
-			static REL::Relocation<std::uintptr_t> target{ REL::ID(ID), OFF };
-			auto& trampoline = F4SE::GetTrampoline();
-			_SetViewport = trampoline.write_call<5>(target.address(), SetViewport);
-		}
-
 	private:
 		static void SetViewport(
 			[[maybe_unused]] RE::Interface3D::Renderer* a_this,
-			[[maybe_unused]] RE::Scaleform::GFx::Movie* a_ui,
+			[[maybe_unused]] Scaleform::GFx::Movie* a_ui,
 			[[maybe_unused]] const RE::NiRect<float>& a_viewport)
 		{
 			if (detail::IsExempt())
 			{
-				return _SetViewport(a_this, a_ui, a_viewport);
+				return _SetViewport0(a_this, a_ui, a_viewport);
 			}
 
 			if (a_this->name != detail::PipboyScreenModel::GetRendererName())
 			{
-				return _SetViewport(a_this, a_ui, a_viewport);
+				return _SetViewport0(a_this, a_ui, a_viewport);
 			}
 
 			if (auto UI = RE::UI::GetSingleton())
@@ -1198,36 +1054,27 @@ private:
 						TerminalMenu->UpdateFlag(RE::UI_MENU_FLAGS::kCustomRendering, false);
 					}
 
-					RE::Scaleform::GFx::Value root;
+					Scaleform::GFx::Value root;
 					if (TerminalMenu->uiMovie && TerminalMenu->uiMovie->GetVariable(&root, "root"))
 					{
-						root.SetMember("x", MCM::Settings::Pipboy::fTerminalMenuX);
-						root.SetMember("y", MCM::Settings::Pipboy::fTerminalMenuY);
-						root.SetMember("scaleX", MCM::Settings::Pipboy::fTerminalMenuScale * 0.70);
-						root.SetMember("scaleY", MCM::Settings::Pipboy::fTerminalMenuScale);
+						root.SetMember("x", MCM::Settings::Pipboy::fTerminalMenuX.GetValue());
+						root.SetMember("y", MCM::Settings::Pipboy::fTerminalMenuY.GetValue());
+						root.SetMember("scaleX", MCM::Settings::Pipboy::fTerminalMenuScale.GetValue() * 0.70);
+						root.SetMember("scaleY", MCM::Settings::Pipboy::fTerminalMenuScale.GetValue());
 					}
 				}
 			}
 
-			return _SetViewport(a_this, a_ui, detail::FullViewport);
+			return _SetViewport0(a_this, a_ui, detail::FullViewport);
 		}
 
-		inline static REL::Relocation<decltype(&hkSetViewport::SetViewport)> _SetViewport;
+		inline static REL::Hook _SetViewport0{ REL::ID(2224616), 0x3C9, SetViewport };  // TerminalMenu::InitMenu
 	};
 
-	template <std::uint64_t ID, std::ptrdiff_t OFF>
 	class hkSetCursorConstraintsRaw
 	{
-	public:
-		static void Install()
-		{
-			static REL::Relocation<std::uintptr_t> target{ REL::ID(ID), OFF };
-			auto& trampoline = F4SE::GetTrampoline();
-			_SetCursorConstraints = trampoline.write_call<5>(target.address(), SetCursorConstraints);
-		}
-
 	private:
-		static void SetCursorConstraints(
+		static void SetCursorConstraintsRaw(
 			[[maybe_unused]] RE::MenuCursor* a_this,
 			[[maybe_unused]] std::uint32_t a_x,
 			[[maybe_unused]] std::uint32_t a_y,
@@ -1236,65 +1083,55 @@ private:
 		{
 			if (detail::IsExempt())
 			{
-				return _SetCursorConstraints(a_this, a_x, a_y, a_w, a_h);
+				return _SetCursorConstraintsRaw0(a_this, a_x, a_y, a_w, a_h);
 			}
 
 			auto MenuCursor = RE::MenuCursor::GetSingleton();
 			if (!MenuCursor)
 			{
-				return _SetCursorConstraints(a_this, a_x, a_y, a_w, a_h);
+				return _SetCursorConstraintsRaw0(a_this, a_x, a_y, a_w, a_h);
 			}
 
 			MenuCursor->ClearConstraints();
 		}
 
-		inline static REL::Relocation<decltype(&hkSetCursorConstraintsRaw::SetCursorConstraints)> _SetCursorConstraints;
+		inline static REL::Hook _SetCursorConstraintsRaw0{ REL::ID(2225455), 0x07E, SetCursorConstraintsRaw };  // PipboyManager::RaisePipboy
+		inline static REL::Hook _SetCursorConstraintsRaw1{ REL::ID(2225455), 0x0A3, SetCursorConstraintsRaw };  // PipboyManager::RaisePipboy
+		inline static REL::Hook _SetCursorConstraintsRaw2{ REL::ID(2225479), 0x2D4, SetCursorConstraintsRaw };  // PipboyManager::InitPipboy
+		inline static REL::Hook _SetCursorConstraintsRaw3{ REL::ID(2225479), 0x2F9, SetCursorConstraintsRaw };  // PipboyManager::InitPipboy
+		inline static REL::Hook _SetCursorConstraintsRaw4{ REL::ID(2225488), 0x04D, SetCursorConstraintsRaw };  // PipboyManager::UpdateCursorConstraint
+		inline static REL::Hook _SetCursorConstraintsRaw5{ REL::ID(2225488), 0x075, SetCursorConstraintsRaw };  // PipboyManager::UpdateCursorConstraint
 	};
 
-	template <std::uint64_t ID, std::ptrdiff_t OFF, bool RETN>
 	class hkQActorInPowerArmor
 	{
-	public:
-		static void Install()
-		{
-			static REL::Relocation<std::uintptr_t> target{ REL::ID(ID), OFF };
-			auto& trampoline = F4SE::GetTrampoline();
-			_QActorInPowerArmor = trampoline.write_call<5>(target.address(), QActorInPowerArmor);
-		}
-
 	private:
 		static bool QActorInPowerArmor(
 			[[maybe_unused]] RE::Actor* a_actor)
 		{
 			if (detail::IsExempt())
 			{
-				return _QActorInPowerArmor(a_actor);
+				return _QActorInPowerArmor0(a_actor);
 			}
 
-			return RETN;
+			return true;
 		}
 
-		inline static REL::Relocation<decltype(&hkQActorInPowerArmor::QActorInPowerArmor)> _QActorInPowerArmor;
+		inline static REL::Hook _QActorInPowerArmor0{ REL::ID(2225447), 0x29, QActorInPowerArmor };  // PipboyManager::PlayPipboyGenericOpenAnim
+		inline static REL::Hook _QActorInPowerArmor1{ REL::ID(2225454), 0x46, QActorInPowerArmor };  // PipboyManager::LowerPipboy
+		inline static REL::Hook _QActorInPowerArmor2{ REL::ID(2225455), 0xC6, QActorInPowerArmor };  // PipboyManager::RaisePipboy
+		inline static REL::Hook _QActorInPowerArmor3{ REL::ID(2225486), 0x29, QActorInPowerArmor };  // PipboyManager::ProcessLoweringReason
 	};
 
-	template <std::uint64_t ID, std::ptrdiff_t OFF>
 	class hkQActorInPowerArmorRW
 	{
-	public:
-		static void Install()
-		{
-			static REL::Relocation<std::uintptr_t> target{ REL::ID(ID), OFF };
-			auto& trampoline = F4SE::GetTrampoline();
-			_QActorInPowerArmor = trampoline.write_call<5>(target.address(), QActorInPowerArmor);
-		}
-
 	private:
 		static bool QActorInPowerArmor(
 			[[maybe_unused]] RE::Actor* a_actor)
 		{
 			if (detail::IsExempt())
 			{
-				return _QActorInPowerArmor(a_actor);
+				return _QActorInPowerArmor0(a_actor);
 			}
 
 			if (auto PlayerCamera = RE::PlayerCamera::GetSingleton())
@@ -1305,23 +1142,14 @@ private:
 				}
 			}
 
-			return _QActorInPowerArmor(a_actor);
+			return _QActorInPowerArmor0(a_actor);
 		}
 
-		inline static REL::Relocation<decltype(&hkQActorInPowerArmorRW::QActorInPowerArmor)> _QActorInPowerArmor;
+		inline static REL::Hook _QActorInPowerArmor0{ REL::ID(2234886), 0x155, QActorInPowerArmor };  // ReadyWeaponHandler::HandleEvent
 	};
 
-	template <std::uint64_t ID, std::ptrdiff_t OFF>
 	class hkPlayPipboyLoadHolotapeAnim
 	{
-	public:
-		static void Install()
-		{
-			static REL::Relocation<std::uintptr_t> target{ REL::ID(ID), OFF };
-			auto& trampoline = F4SE::GetTrampoline();
-			_PlayPipboyLoadHolotapeAnim = trampoline.write_call<5>(target.address(), PlayPipboyLoadHolotapeAnim);
-		}
-
 	private:
 		static void PlayPipboyLoadHolotapeAnim(
 			[[maybe_unused]] RE::PipboyManager* a_this,
@@ -1330,45 +1158,38 @@ private:
 		{
 			if (detail::IsExempt())
 			{
-				return _PlayPipboyLoadHolotapeAnim(a_this, a_holotape, a_noAnim);
+				return _PlayPipboyLoadHolotapeAnim0(a_this, a_holotape, a_noAnim);
 			}
 
 			if (RE::PowerArmor::PlayerInPowerArmor())
 			{
-				return _PlayPipboyLoadHolotapeAnim(a_this, a_holotape, true);
+				return _PlayPipboyLoadHolotapeAnim0(a_this, a_holotape, true);
 			}
 
 			if (auto PlayerCamera = RE::PlayerCamera::GetSingleton())
 			{
 				if (PlayerCamera->currentState && PlayerCamera->currentState->id >= RE::CameraState::k3rdPerson)
 				{
-					return _PlayPipboyLoadHolotapeAnim(a_this, a_holotape, true);
+					return _PlayPipboyLoadHolotapeAnim0(a_this, a_holotape, true);
 				}
 			}
 
 			auto Renderer = detail::PipboyScreenModel::GetRenderer();
 			if (!Renderer || !Renderer->enabled)
 			{
-				return _PlayPipboyLoadHolotapeAnim(a_this, a_holotape, a_noAnim);
+				return _PlayPipboyLoadHolotapeAnim0(a_this, a_holotape, a_noAnim);
 			}
 
-			_PlayPipboyLoadHolotapeAnim(a_this, a_holotape, true);
+			_PlayPipboyLoadHolotapeAnim0(a_this, a_holotape, true);
 		}
 
-		inline static REL::Relocation<decltype(&hkPlayPipboyLoadHolotapeAnim::PlayPipboyLoadHolotapeAnim)> _PlayPipboyLoadHolotapeAnim;
+		inline static REL::Hook _PlayPipboyLoadHolotapeAnim0{ REL::ID(2224162), 0x147, PlayPipboyLoadHolotapeAnim };  // unk
+		inline static REL::Hook _PlayPipboyLoadHolotapeAnim1{ REL::ID(2224169), 0x09E, PlayPipboyLoadHolotapeAnim };  // PipboyInventoryMenu::PlayHolotape
+		inline static REL::Hook _PlayPipboyLoadHolotapeAnim2{ REL::ID(2234886), 0x1B3, PlayPipboyLoadHolotapeAnim };  // ReadyWeaponHandler::HandleEvent
 	};
 
-	template <std::uint64_t ID, std::ptrdiff_t OFF>
 	class hkLowerPipboy
 	{
-	public:
-		static void Install()
-		{
-			static REL::Relocation<std::uintptr_t> target{ REL::ID(ID), OFF };
-			auto& trampoline = F4SE::GetTrampoline();
-			_LowerPipboy = trampoline.write_call<5>(target.address(), LowerPipboy);
-		}
-
 	private:
 		static void LowerPipboy(
 			[[maybe_unused]] RE::PipboyManager* a_this,
@@ -1376,31 +1197,25 @@ private:
 		{
 			if (detail::IsExempt())
 			{
-				return _LowerPipboy(a_this, a_reason);
+				return _LowerPipboy0(a_this, a_reason);
 			}
 
 			auto Renderer = detail::PipboyScreenModel::GetRenderer();
 			if (!Renderer)
 			{
-				return _LowerPipboy(a_this, a_reason);
+				return _LowerPipboy0(a_this, a_reason);
 			}
 
 			Renderer->Disable();
-			_LowerPipboy(a_this, a_reason);
+			_LowerPipboy0(a_this, a_reason);
 		}
 
-		inline static REL::Relocation<decltype(&hkLowerPipboy::LowerPipboy)> _LowerPipboy;
+		inline static REL::Hook _LowerPipboy0{ REL::ID(2223010), 0x0AC, LowerPipboy };  // ExamineMenu::ShowInspectMenu
+		inline static REL::Hook _LowerPipboy1{ REL::ID(2248510), 0x1C3, LowerPipboy };  // BookMenu::OpenBookMenu
 	};
 
 	class hkProcessEvent
 	{
-	public:
-		static void Install()
-		{
-			static REL::Relocation<std::uintptr_t> target{ RE::PipboyManager::VTABLE[0] };
-			_ProcessEvent = target.write_vfunc(0x01, reinterpret_cast<std::uintptr_t>(ProcessEvent));
-		}
-
 	private:
 		static RE::BSEventNotifyControl ProcessEvent(
 			[[maybe_unused]] RE::PipboyManager* a_this,
@@ -1414,7 +1229,7 @@ private:
 
 			if (detail::IsExempt())
 			{
-				return _ProcessEvent(a_this, a_event, a_source);
+				return _ProcessEvent0(a_this, a_event, a_source);
 			}
 
 			if (MCM::Settings::Runtime::bPlayClose && (a_event.tag == a_this->openAnimEvent || a_event.tag == "holotapeLoaded"sv))
@@ -1422,9 +1237,13 @@ private:
 				MCM::Settings::Runtime::bPlayClose = false;
 				if (auto PlayerControls = RE::PlayerControls::GetSingleton())
 				{
-					PlayerControls->DoAction(
-						RE::DEFAULT_OBJECT::kActionPipboyClose,
-						RE::ActionInput::ACTIONPRIORITY::kTry);
+					PlayerControls->DoAction(RE::DEFAULT_OBJECT::kActionPipboyClose, RE::ActionInput::ACTIONPRIORITY::kTry);
+					if (a_this->menuToOpen == "VoiceHolotape"sv)
+					{
+						a_this->closeAnimEvent = "pipboyClosed"sv;
+						a_this->OnPipboyCloseAnim();
+						a_this->OnPipboyClosed();
+					}
 				}
 
 				a_this->StopAnimationGraphListening();
@@ -1433,19 +1252,11 @@ private:
 			return RE::BSEventNotifyControl::kContinue;
 		}
 
-		inline static REL::Relocation<decltype(&ProcessEvent)> _ProcessEvent;
+		inline static REL::HookVFT _ProcessEvent0{ RE::PipboyManager::VTABLE[0], 0x01, ProcessEvent };
 	};
 
-	template <class T>
-	class hkProcessMessageT
+	class hkProcessMessage
 	{
-	public:
-		static void Install()
-		{
-			static REL::Relocation<std::uintptr_t> target{ T::VTABLE[0] };
-			_ProcessMessage = target.write_vfunc(0x03, reinterpret_cast<std::uintptr_t>(ProcessMessage));
-		}
-
 	private:
 		static RE::UI_MESSAGE_RESULTS ProcessMessage(
 			[[maybe_unused]] RE::IMenu* a_this,
@@ -1453,7 +1264,7 @@ private:
 		{
 			if (detail::IsExempt())
 			{
-				return _ProcessMessage(a_this, a_message);
+				return _ProcessMessage0(a_this, a_message);
 			}
 
 			switch (a_message.type.get())
@@ -1488,30 +1299,14 @@ private:
 				break;
 			}
 
-			return _ProcessMessage(a_this, a_message);
+			return _ProcessMessage0(a_this, a_message);
 		}
 
-		inline static REL::Relocation<decltype(&ProcessMessage)> _ProcessMessage;
+		inline static REL::HookVFT _ProcessMessage0{ RE::PipboyHolotapeMenu::VTABLE[0], 0x03, ProcessMessage };
 	};
 
-	template <std::uint64_t ID, std::ptrdiff_t OFF>
 	class hkPlayPipboyOpenAnim
 	{
-	public:
-		static void Install()
-		{
-			static REL::Relocation<std::uintptr_t> target{ REL::ID(ID), OFF };
-			auto& trampoline = F4SE::GetTrampoline();
-			_PlayPipboyOpenAnim = trampoline.write_call<5>(target.address(), PlayPipboyOpenAnim);
-		}
-
-		static void InstallJmp()
-		{
-			static REL::Relocation<std::uintptr_t> target{ REL::ID(ID), OFF };
-			auto& trampoline = F4SE::GetTrampoline();
-			_PlayPipboyOpenAnim = trampoline.write_branch<5>(target.address(), PlayPipboyOpenAnim);
-		}
-
 	private:
 		static void PlayPipboyOpenAnim(
 			[[maybe_unused]] RE::PipboyManager* a_this,
@@ -1519,7 +1314,7 @@ private:
 		{
 			if (detail::IsExempt())
 			{
-				return _PlayPipboyOpenAnim(a_this, a_menu);
+				return _PlayPipboyOpenAnim0(a_this, a_menu);
 			}
 
 			if (!a_this->pipboyOpening)
@@ -1532,20 +1327,13 @@ private:
 			}
 		}
 
-		inline static REL::Relocation<decltype(&hkPlayPipboyOpenAnim::PlayPipboyOpenAnim)> _PlayPipboyOpenAnim;
+		inline static REL::Hook _PlayPipboyOpenAnim0{ REL::ID(2219795), 0x134, PlayPipboyOpenAnim };  // UseItemCommand::DoExecute
+		// inline static REL::Hook _PlayPipboyOpenAnim1{ REL::ID(743427), 0x020, PlayPipboyOpenAnim };   // PipboyManager::PlayPipboyOpenTerminalAnim - inlined (maybe unused)
+		inline static REL::Hook _PlayPipboyOpenAnim2{ REL::ID(2249426), 0x32F, PlayPipboyOpenAnim };  // PipboyHandler::HandleEvent
 	};
 
-	template <std::uint64_t ID, std::ptrdiff_t OFF>
 	class hkOnPipboyOpenAnim
 	{
-	public:
-		static void Install()
-		{
-			static REL::Relocation<std::uintptr_t> target{ REL::ID(ID), OFF };
-			auto& trampoline = F4SE::GetTrampoline();
-			_OnPipboyOpenAnim = trampoline.write_call<5>(target.address(), OnPipboyOpenAnim);
-		}
-
 	private:
 		static void OnPipboyOpenAnim(
 			[[maybe_unused]] RE::PipboyManager* a_this)
@@ -1557,7 +1345,7 @@ private:
 
 			if (detail::IsExempt())
 			{
-				return _OnPipboyOpenAnim(a_this);
+				return _OnPipboyOpenAnim0(a_this);
 			}
 
 			if (detail::IsAnimOverride())
@@ -1566,24 +1354,17 @@ private:
 				a_this->StartAnimationGraphListening();
 			}
 
-			_OnPipboyOpenAnim(a_this);
+			_OnPipboyOpenAnim0(a_this);
 			a_this->OnPipboyOpened();
 		}
 
-		inline static REL::Relocation<decltype(&hkOnPipboyOpenAnim::OnPipboyOpenAnim)> _OnPipboyOpenAnim;
+		inline static REL::Hook _OnPipboyOpenAnim0{ REL::ID(2225446), 0x0247, OnPipboyOpenAnim };  // PipboyManager::PlayPipboyLoadHolotapeAnim
+		inline static REL::Hook _OnPipboyOpenAnim1{ REL::ID(2225447), 0x00A4, OnPipboyOpenAnim };  // PipboyManager::PlayPipboyGenericOpenAnim
+		inline static REL::Hook _OnPipboyOpenAnim2{ REL::ID(2229323), 0x2878, OnPipboyOpenAnim };  // TaskQueueInterface::TaskUnpackFunc
 	};
 
-	template <std::uint64_t ID, std::ptrdiff_t OFF>
 	class hkPlayPipboyCloseAnim
 	{
-	public:
-		static void Install()
-		{
-			static REL::Relocation<std::uintptr_t> target{ REL::ID(ID), OFF };
-			auto& trampoline = F4SE::GetTrampoline();
-			_PlayPipboyCloseAnim = trampoline.write_call<5>(target.address(), PlayPipboyCloseAnim);
-		}
-
 	private:
 		static void PlayPipboyCloseAnim(
 			[[maybe_unused]] RE::PipboyManager* a_this,
@@ -1591,7 +1372,7 @@ private:
 		{
 			if (detail::IsExempt())
 			{
-				return _PlayPipboyCloseAnim(a_this, a_noAnim);
+				return _PlayPipboyCloseAnim0(a_this, a_noAnim);
 			}
 
 			if (!a_this->pipboyClosing && a_this->QPipboyActive())
@@ -1604,6 +1385,7 @@ private:
 				}
 				else if (RE::PowerArmor::PlayerInPowerArmor())
 				{
+					RE::BSUIMessageData::SendUIBoolMessage("PipboyMenu"sv, RE::UI_MESSAGE_TYPE::kHide, true);
 					a_this->closeAnimEvent = "PowerArmorClose"sv;
 					a_this->OnPipboyCloseAnim();
 				}
@@ -1622,20 +1404,16 @@ private:
 			}
 		}
 
-		inline static REL::Relocation<decltype(&hkPlayPipboyCloseAnim::PlayPipboyCloseAnim)> _PlayPipboyCloseAnim;
+		inline static REL::Hook _PlayPipboyCloseAnim0{ REL::ID(2223217), 0x03F, PlayPipboyCloseAnim };  // GenericMenu::ProcessMessage
+		inline static REL::Hook _PlayPipboyCloseAnim1{ REL::ID(2224181), 0x21D, PlayPipboyCloseAnim };  // PipboyMenu::ProcessMessage
+		inline static REL::Hook _PlayPipboyCloseAnim2{ REL::ID(2224181), 0x230, PlayPipboyCloseAnim };  // PipboyMenu::ProcessMessage
+		inline static REL::Hook _PlayPipboyCloseAnim3{ REL::ID(2224614), 0x346, PlayPipboyCloseAnim };  // TerminalMenu::ProcessMessage
+		inline static REL::Hook _PlayPipboyCloseAnim4{ REL::ID(2231392), 0x232, PlayPipboyCloseAnim };  // unk
+		inline static REL::Hook _PlayPipboyCloseAnim5{ REL::ID(2231408), 0x105, PlayPipboyCloseAnim };  // ActorEquipManager::UseObject
 	};
 
-	template <std::uint64_t ID, std::ptrdiff_t OFF>
 	class hkOnPipboyCloseAnim
 	{
-	public:
-		static void Install()
-		{
-			static REL::Relocation<std::uintptr_t> target{ REL::ID(ID), OFF };
-			auto& trampoline = F4SE::GetTrampoline();
-			_OnPipboyCloseAnim = trampoline.write_call<5>(target.address(), OnPipboyCloseAnim);
-		}
-
 	private:
 		static void OnPipboyCloseAnim(
 			[[maybe_unused]] RE::PipboyManager* a_this)
@@ -1645,23 +1423,14 @@ private:
 				return;
 			}
 
-			return _OnPipboyCloseAnim(a_this);
+			return _OnPipboyCloseAnim0(a_this);
 		}
 
-		inline static REL::Relocation<decltype(&hkOnPipboyCloseAnim::OnPipboyCloseAnim)> _OnPipboyCloseAnim;
+		inline static REL::Hook _OnPipboyCloseAnim0{ REL::ID(2229323), 0x28B3, OnPipboyCloseAnim };  // TaskQueueInterface::TaskUnpackFunc
 	};
 
-	template <std::uint64_t ID, std::ptrdiff_t OFF>
 	class hkStartPipboyMode
 	{
-	public:
-		static void Install()
-		{
-			static REL::Relocation<std::uintptr_t> target{ REL::ID(ID), OFF };
-			auto& trampoline = F4SE::GetTrampoline();
-			_StartPipboyMode = trampoline.write_call<5>(target.address(), StartPipboyMode);
-		}
-
 	private:
 		static void StartPipboyMode(
 			[[maybe_unused]] RE::PlayerCamera* a_this,
@@ -1669,52 +1438,39 @@ private:
 		{
 			if (detail::IsExempt())
 			{
-				return _StartPipboyMode(a_this, a_forcePipboyModeCamera);
+				return _StartPipboyMode0(a_this, a_forcePipboyModeCamera);
 			}
 
 			return;
 		}
 
-		inline static REL::Relocation<decltype(&hkStartPipboyMode::StartPipboyMode)> _StartPipboyMode;
+		inline static REL::Hook _StartPipboyMode0{ REL::ID(2225444), 0x05D, StartPipboyMode };  // PipboyManager::PlayPipboyOpenAnim
+		inline static REL::Hook _StartPipboyMode1{ REL::ID(2225445), 0x069, StartPipboyMode };  // PipboyManager::PlayPipboyOpenTerminalAnim
+		inline static REL::Hook _StartPipboyMode2{ REL::ID(2225446), 0x1A2, StartPipboyMode };  // PipboyManager::PlayPipboyLoadHolotapeAnim
+		inline static REL::Hook _StartPipboyMode3{ REL::ID(2225447), 0x07B, StartPipboyMode };  // PipboyManager::PlayPipboyGenericOpenAnim
 	};
 
-	template <std::uint64_t ID, std::ptrdiff_t OFF>
 	class hkStopPipboyMode
 	{
-	public:
-		static void Install()
-		{
-			static REL::Relocation<std::uintptr_t> target{ REL::ID(ID), OFF };
-			auto& trampoline = F4SE::GetTrampoline();
-			_StopPipboyMode = trampoline.write_call<5>(target.address(), StopPipboyMode);
-		}
-
 	private:
 		static void StopPipboyMode(
 			[[maybe_unused]] RE::PlayerCamera* a_this)
 		{
 			if (detail::IsExempt())
 			{
-				return _StopPipboyMode(a_this);
+				return _StopPipboyMode0(a_this);
 			}
 
 			return;
 		}
 
-		inline static REL::Relocation<decltype(&hkStopPipboyMode::StopPipboyMode)> _StopPipboyMode;
+		inline static REL::Hook _StopPipboyMode0{ REL::ID(2225449), 0x10, StopPipboyMode };  // PipboyManager::OnPipboyOpenAnimFailed
+		inline static REL::Hook _StopPipboyMode1{ REL::ID(2225458), 0x90, StopPipboyMode };  // PipboyManager::OnPipboyClosed
+		inline static REL::Hook _StopPipboyMode2{ REL::ID(2225480), 0x90, StopPipboyMode };  // PipboyManager::ClosedownPipboy
 	};
 
-	template <std::uint64_t ID, std::ptrdiff_t OFF>
 	class hkSetWeaponBonesCulled
 	{
-	public:
-		static void Install()
-		{
-			static REL::Relocation<std::uintptr_t> target{ REL::ID(ID), OFF };
-			auto& trampoline = F4SE::GetTrampoline();
-			_SetWeaponBonesCulled = trampoline.write_call<5>(target.address(), SetWeaponBonesCulled);
-		}
-
 	private:
 		static bool SetWeaponBonesCulled(
 			[[maybe_unused]] RE::AIProcess* a_this,
@@ -1724,26 +1480,19 @@ private:
 		{
 			if (detail::IsExempt())
 			{
-				return _SetWeaponBonesCulled(a_this, a_actor, a_stateToSet, a_type);
+				return _SetWeaponBonesCulled0(a_this, a_actor, a_stateToSet, a_type);
 			}
 
 			return true;
 		}
 
-		inline static REL::Relocation<decltype(&hkSetWeaponBonesCulled::SetWeaponBonesCulled)> _SetWeaponBonesCulled;
+		inline static REL::Hook _SetWeaponBonesCulled0{ REL::ID(2225458), 0x11F, SetWeaponBonesCulled };  // PipboyManager::OnPipboyClosed
+		inline static REL::Hook _SetWeaponBonesCulled1{ REL::ID(2225479), 0x0A7, SetWeaponBonesCulled };  // PipboyManager::InitPipboy
+		inline static REL::Hook _SetWeaponBonesCulled2{ REL::ID(2225480), 0x11F, SetWeaponBonesCulled };  // PipboyManager::ClosedownPipboy
 	};
 
-	template <std::uint64_t ID, std::ptrdiff_t OFF>
 	class hkDoAction
 	{
-	public:
-		static void Install()
-		{
-			static REL::Relocation<std::uintptr_t> target{ REL::ID(ID), OFF };
-			auto& trampoline = F4SE::GetTrampoline();
-			_DoAction = trampoline.write_call<5>(target.address(), DoAction);
-		}
-
 	private:
 		static bool DoAction(
 			[[maybe_unused]] RE::PlayerControls* a_this,
@@ -1752,26 +1501,19 @@ private:
 		{
 			if (detail::IsExempt())
 			{
-				return _DoAction(a_this, a_action, a_priority);
+				return _DoAction0(a_this, a_action, a_priority);
 			}
 
 			return true;
 		}
 
-		inline static REL::Relocation<decltype(&hkDoAction::DoAction)> _DoAction;
+		inline static REL::Hook _DoAction0{ REL::ID(2225450), 0x1D3, DoAction };  // PipboyManager::OnPipboyOpened
+		inline static REL::Hook _DoAction1{ REL::ID(2225452), 0x04C, DoAction };  // PipboyManager::StopExamineMenu
+		inline static REL::Hook _DoAction2{ REL::ID(2225454), 0x061, DoAction };  // PipboyManager::LowerPipboy
 	};
 
-	template <std::uint64_t ID, std::ptrdiff_t OFF>
 	class hkQueueShowPipboy
 	{
-	public:
-		static void Install()
-		{
-			static REL::Relocation<std::uintptr_t> target{ REL::ID(ID), OFF };
-			auto& trampoline = F4SE::GetTrampoline();
-			_QueueShowPipboy = trampoline.write_call<5>(target.address(), QueueShowPipboy);
-		}
-
 	private:
 		static void QueueShowPipboy(
 			[[maybe_unused]] RE::TaskQueueInterface* a_this,
@@ -1779,52 +1521,35 @@ private:
 		{
 			if (detail::IsExempt())
 			{
-				return _QueueShowPipboy(a_this, a_animType);
+				return _QueueShowPipboy0(a_this, a_animType);
 			}
 
 			return;
 		}
 
-		inline static REL::Relocation<decltype(&hkQueueShowPipboy::QueueShowPipboy)> _QueueShowPipboy;
+		inline static REL::Hook _QueueShowPipboy0{ REL::ID(2225444), 0x89, QueueShowPipboy };  // PipboyManager::PlayPipboyOpenAnim
 	};
 
-	template <std::uint64_t ID, std::ptrdiff_t OFF>
 	class hkQueueClosePipboy
 	{
-	public:
-		static void Install()
-		{
-			static REL::Relocation<std::uintptr_t> target{ REL::ID(ID), OFF };
-			auto& trampoline = F4SE::GetTrampoline();
-			_QueueClosePipboy = trampoline.write_call<5>(target.address(), QueueClosePipboy);
-		}
-
 	private:
 		static void QueueClosePipboy(
 			[[maybe_unused]] RE::TaskQueueInterface* a_this)
 		{
 			if (detail::IsExempt())
 			{
-				return _QueueClosePipboy(a_this);
+				return _QueueClosePipboy0(a_this);
 			}
 
 			return;
 		}
 
-		inline static REL::Relocation<decltype(&hkQueueClosePipboy::QueueClosePipboy)> _QueueClosePipboy;
+		inline static REL::Hook _QueueClosePipboy0{ REL::ID(2225450), 0xE1, QueueClosePipboy };  // PipboyManager::OnPipboyOpened
+		inline static REL::Hook _QueueClosePipboy1{ REL::ID(2225456), 0xCC, QueueClosePipboy };  // PipboyManager::PlayPipboyCloseAnim
 	};
 
-	template <std::uint64_t ID, std::ptrdiff_t OFF>
 	class hkSetEnableDynamicResolution
 	{
-	public:
-		static void Install()
-		{
-			static REL::Relocation<std::uintptr_t> target{ REL::ID(ID), OFF };
-			auto& trampoline = F4SE::GetTrampoline();
-			trampoline.write_call<5>(target.address(), SetEnableDynamicResolution);
-		}
-
 	private:
 		static void SetEnableDynamicResolution(
 			[[maybe_unused]] RE::BSGraphics::RenderTargetManager* a_this,
@@ -1832,26 +1557,20 @@ private:
 		{
 			return;
 		}
+
+		inline static REL::Hook _SetEnableDynamicResolution0{ REL::ID(2225457), 0x10F, SetEnableDynamicResolution };  // PipboyManager::OnPipboyCloseAnim
+		inline static REL::Hook _SetEnableDynamicResolution1{ REL::ID(2225479), 0x275, SetEnableDynamicResolution };  // PipboyManager::InitPipboy
 	};
 
-	template <std::uint64_t ID, std::ptrdiff_t OFF>
 	class hkStopAnimationGraphListening
 	{
-	public:
-		static void Install()
-		{
-			static REL::Relocation<std::uintptr_t> target{ REL::ID(ID), OFF };
-			auto& trampoline = F4SE::GetTrampoline();
-			_StopAnimationGraphListening = trampoline.write_call<5>(target.address(), StopAnimationGraphListening);
-		}
-
 	private:
 		static void StopAnimationGraphListening(
 			[[maybe_unused]] RE::PipboyManager* a_this)
 		{
 			if (detail::IsExempt())
 			{
-				return _StopAnimationGraphListening(a_this);
+				return _StopAnimationGraphListening0(a_this);
 			}
 
 			if (MCM::Settings::Runtime::bPlayClose)
@@ -1859,37 +1578,37 @@ private:
 				return;
 			}
 
-			return _StopAnimationGraphListening(a_this);
+			return _StopAnimationGraphListening0(a_this);
 		}
 
-		inline static REL::Relocation<decltype(&hkStopAnimationGraphListening::StopAnimationGraphListening)> _StopAnimationGraphListening;
+		inline static REL::Hook _StopAnimationGraphListening0{ REL::ID(2225449), 0x18, StopAnimationGraphListening };  // PipboyManager::OnPipboyOpenAnimFailed
+		inline static REL::Hook _StopAnimationGraphListening1{ REL::ID(2225458), 0xE2, StopAnimationGraphListening };  // PipboyManager::OnPipboyClosed
+		inline static REL::Hook _StopAnimationGraphListening2{ REL::ID(2225480), 0xE2, StopAnimationGraphListening };  // PipboyManager::ClosedownPipboy
 	};
 
-	class hkOnButtonEvent
+	class hkShouldHandleEvent
 	{
-	public:
-		static void Install()
-		{
-			static REL::Relocation<std::uintptr_t> target{ RE::PipboyMenu::VTABLE[1] };
-			_ShouldHandleEvent = target.write_vfunc(0x01, reinterpret_cast<std::uintptr_t>(ShouldHandleEvent));
-			_OnButtonEvent = target.write_vfunc(0x08, reinterpret_cast<std::uintptr_t>(OnButtonEvent));
-		}
-
 	private:
 		static bool ShouldHandleEvent(
 			[[maybe_unused]] RE::IMenu* a_this,
 			[[maybe_unused]] const RE::InputEvent* a_event)
 		{
-			return _ShouldHandleEvent(a_this, a_event) && !MCM::Settings::Runtime::bQuickBoyTransition;
+			return _ShouldHandleEvent0(a_this, a_event) && !MCM::Settings::Runtime::bQuickBoyTransition;
 		}
 
+		inline static REL::HookVFT _ShouldHandleEvent0{ RE::PipboyMenu::VTABLE[1], 0x01, ShouldHandleEvent };
+	};
+
+	class hkOnButtonEvent
+	{
+	private:
 		static void OnButtonEvent(
 			[[maybe_unused]] RE::IMenu* a_this,
 			[[maybe_unused]] const RE::ButtonEvent* a_event)
 		{
 			if (!MCM::Settings::Pipboy::bQuickBoyKey.GetValue())
 			{
-				return _OnButtonEvent(a_this, a_event);
+				return _OnButtonEvent0(a_this, a_event);
 			}
 
 			if (a_event->QJustPressed() && (a_event->idCode == MCM::Settings::Runtime::QuickBoyKey))
@@ -1898,24 +1617,14 @@ private:
 				return;
 			}
 
-			return _OnButtonEvent(a_this, a_event);
+			return _OnButtonEvent0(a_this, a_event);
 		}
 
-		inline static REL::Relocation<decltype(&ShouldHandleEvent)> _ShouldHandleEvent;
-		inline static REL::Relocation<decltype(&OnButtonEvent)> _OnButtonEvent;
+		inline static REL::HookVFT _OnButtonEvent0{ RE::PipboyMenu::VTABLE[1], 0x08, OnButtonEvent };
 	};
 
-	template <std::uint64_t ID, std::ptrdiff_t OFF>
 	class hkSetModelScale
 	{
-	public:
-		static void Install()
-		{
-			static REL::Relocation<std::uintptr_t> target{ REL::ID(ID), OFF };
-			auto& trampoline = F4SE::GetTrampoline();
-			_SetModelScale = trampoline.write_call<5>(target.address(), SetModelScale);
-		}
-
 	private:
 		static void SetModelScale(
 			[[maybe_unused]] RE::Inventory3DManager* a_this,
@@ -1923,28 +1632,17 @@ private:
 		{
 			if (detail::IsExempt())
 			{
-				return _SetModelScale(a_this, a_scale);
+				return _SetModelScale0(a_this, a_scale);
 			}
 
-			return _SetModelScale(
-				a_this,
-				static_cast<float>(MCM::Settings::Pipboy::fPipboy3DItemScale));
+			return _SetModelScale0(a_this, MCM::Settings::Pipboy::fPipboy3DItemScale);
 		}
 
-		inline static REL::Relocation<decltype(&hkSetModelScale::SetModelScale)> _SetModelScale;
+		inline static REL::Hook _SetModelScale0{ REL::ID(2225479), 0x1D7, SetModelScale };  // PipboyManager::InitPipboy
 	};
 
-	template <std::uint64_t ID, std::ptrdiff_t OFF>
 	class hkSetModelScreenPosition
 	{
-	public:
-		static void Install()
-		{
-			static REL::Relocation<std::uintptr_t> target{ REL::ID(ID), OFF };
-			auto& trampoline = F4SE::GetTrampoline();
-			_SetModelScreenPosition = trampoline.write_call<5>(target.address(), SetModelScreenPosition);
-		}
-
 	private:
 		static void SetModelScreenPosition(
 			[[maybe_unused]] RE::Inventory3DManager* a_this,
@@ -1953,38 +1651,28 @@ private:
 		{
 			if (detail::IsExempt())
 			{
-				return _SetModelScreenPosition(a_this, a_position, a_screenCoords);
+				return _SetModelScreenPosition0(a_this, a_position, a_screenCoords);
 			}
 
 			RE::NiPoint3 ScreenPosition{
-				static_cast<float>(MCM::Settings::Pipboy::fPipboy3DItemScreenPosX),
-				static_cast<float>(MCM::Settings::Pipboy::fPipboy3DItemScreenPosY),
+				MCM::Settings::Pipboy::fPipboy3DItemScreenPosX,
+				MCM::Settings::Pipboy::fPipboy3DItemScreenPosY,
 				1.0f,
 			};
-
-			return _SetModelScreenPosition(a_this, ScreenPosition, a_screenCoords);
+			return _SetModelScreenPosition0(a_this, ScreenPosition, a_screenCoords);
 		}
 
-		inline static REL::Relocation<decltype(&hkSetModelScreenPosition::SetModelScreenPosition)> _SetModelScreenPosition;
+		inline static REL::Hook _SetModelScreenPosition0{ REL::ID(2225479), 0x1B2, SetModelScreenPosition };  // PipboyManager::InitPipboy
 	};
 
-	template <std::uint64_t ID, std::ptrdiff_t OFF>
 	class hkKillScreenEffects
 	{
-	public:
-		static void Install()
-		{
-			static REL::Relocation<std::uintptr_t> target{ REL::ID(ID), OFF };
-			auto& trampoline = F4SE::GetTrampoline();
-			_KillScreenEffects = trampoline.write_call<5>(target.address(), KillScreenEffects);
-		}
-
 	private:
 		static void KillScreenEffects()
 		{
 			if (detail::IsExempt())
 			{
-				return _KillScreenEffects();
+				return _KillScreenEffects0();
 			}
 
 			if (MCM::Settings::Pipboy::bKeepLowHealthIMod)
@@ -1992,54 +1680,36 @@ private:
 				return;
 			}
 
-			return _KillScreenEffects();
+			return _KillScreenEffects0();
 		}
 
-		inline static REL::Relocation<decltype(&hkKillScreenEffects::KillScreenEffects)> _KillScreenEffects;
+		inline static REL::Hook _KillScreenEffects0{ REL::ID(2224181), 0x6B, KillScreenEffects };  // PipboyMenu::ProcessMessage
 	};
 
-	template <std::uint64_t ID, std::ptrdiff_t OFF>
 	class hkInstanceFormTrigger
 	{
-	public:
-		static void Install()
-		{
-			static REL::Relocation<std::uintptr_t> target{ REL::ID(ID), OFF };
-			auto& trampoline = F4SE::GetTrampoline();
-			_InstanceFormTrigger = trampoline.write_call<5>(target.address(), InstanceFormTrigger);
-		}
-
 	private:
 		static void InstanceFormTrigger(
 			[[maybe_unused]] const RE::BSFixedString& a_modName)
 		{
 			if (detail::IsExempt())
 			{
-				return _InstanceFormTrigger(a_modName);
+				return _InstanceFormTrigger0(a_modName);
 			}
 
 			if (MCM::Settings::Pipboy::bBackgroundBlur)
 			{
-				return _InstanceFormTrigger(a_modName);
+				return _InstanceFormTrigger0(a_modName);
 			}
 
 			return;
 		}
 
-		inline static REL::Relocation<decltype(&hkInstanceFormTrigger::InstanceFormTrigger)> _InstanceFormTrigger;
+		inline static REL::Hook _InstanceFormTrigger0{ REL::ID(2225479), 0x240, InstanceFormTrigger };  // PipboyManager::InitPipboy
 	};
 
-	template <std::uint64_t ID, std::ptrdiff_t OFF>
 	class hkShowPipboyLight
 	{
-	public:
-		static void Install()
-		{
-			static REL::Relocation<std::uintptr_t> target{ REL::ID(ID), OFF };
-			auto& trampoline = F4SE::GetTrampoline();
-			_ShowPipboyLight = trampoline.write_call<5>(target.address(), ShowPipboyLight);
-		}
-
 	private:
 		static void ShowPipboyLight(
 			[[maybe_unused]] RE::PlayerCharacter* a_this,
@@ -2048,26 +1718,18 @@ private:
 		{
 			if (detail::IsExempt())
 			{
-				return _ShowPipboyLight(a_this, a_show, a_skipEffects);
+				return _ShowPipboyLight0(a_this, a_show, a_skipEffects);
 			}
 
 			return;
 		}
 
-		inline static REL::Relocation<decltype(&hkShowPipboyLight::ShowPipboyLight)> _ShowPipboyLight;
+		inline static REL::Hook _ShowPipboyLight0{ REL::ID(2225457), 0x0A4, ShowPipboyLight };  // PipboyManager::OnPipboyCloseAnim
+		inline static REL::Hook _ShowPipboyLight1{ REL::ID(2225479), 0x34E, ShowPipboyLight };  // PipboyManager::InitPipboy
 	};
 
-	template <std::uint64_t ID, std::ptrdiff_t OFF>
 	class hkRenderEffect
 	{
-	public:
-		static void Install()
-		{
-			static REL::Relocation<std::uintptr_t> target{ REL::ID(ID), OFF };
-			auto& trampoline = F4SE::GetTrampoline();
-			_RenderEffect = trampoline.write_call<5>(target.address(), RenderEffect);
-		}
-
 	private:
 		static void RenderEffect(
 			[[maybe_unused]] RE::ImageSpaceManager* a_this,
@@ -2078,12 +1740,12 @@ private:
 		{
 			if (MCM::Settings::Pipboy::bDisableFX && MCM::Settings::Pipboy::bDisableFXBoth)
 			{
-				return _RenderEffect(a_this, 0x48, a_sourceTarget, a_destTarget, a_param);
+				return _RenderEffect0(a_this, 0x48, a_sourceTarget, a_destTarget, a_param);
 			}
 
-			return _RenderEffect(a_this, a_effect, a_sourceTarget, a_destTarget, a_param);
+			return _RenderEffect0(a_this, a_effect, a_sourceTarget, a_destTarget, a_param);
 		}
 
-		inline static REL::Relocation<decltype(&hkRenderEffect::RenderEffect)> _RenderEffect;
+		inline static REL::Hook _RenderEffect0{ REL::ID(2222569), 0x1C0, RenderEffect };  // Interface3D::Renderer::DrawPostFX
 	};
 };
