@@ -36,6 +36,12 @@ namespace MCM
 			inline static REX::INI::F32 fPipboy3DItemScreenPosY{ "Pipboy", "fPipboy3DItemScreenPosY", 0.28f };
 		};
 
+		class Input
+		{
+		public:
+			inline static REX::INI::I32 iQuickBoyKey{ "Input", "iQuickBoyKey", 0 };
+		};
+
 		class Runtime
 		{
 		public:
@@ -60,7 +66,7 @@ namespace MCM
 
 		static bool QQuickBoy()
 		{
-			return (MCM::Settings::Pipboy::bEnable.GetValue() && MCM::Settings::Runtime::bQuickBoy);
+			return (MCM::Settings::Pipboy::bEnable && MCM::Settings::Runtime::bQuickBoy);
 		}
 
 	private:
@@ -72,9 +78,7 @@ namespace MCM
 				{
 					if (auto UIMessageQueue = RE::UIMessageQueue::GetSingleton())
 					{
-						UIMessageQueue->AddMessage(
-							"PipboyMenu"sv,
-							RE::UI_MESSAGE_TYPE::kHide);
+						UIMessageQueue->AddMessage("PipboyMenu"sv, RE::UI_MESSAGE_TYPE::kHide);
 					}
 				}
 			}
@@ -94,29 +98,34 @@ namespace MCM
 
 		static void HandleKeybinds()
 		{
-			/*
-			try
-			{
-				std::ifstream fstream{ "Data/MCM/Settings/Keybinds.json" };
-				nlohmann::json data =
-					nlohmann::json::parse(fstream);
-				fstream.close();
+			MCM::Settings::Runtime::QuickBoyKey = MCM::Settings::Input::iQuickBoyKey;
 
-				for (auto& iter : data["keybinds"sv])
+			struct keybinds_t
+			{
+				struct keybind_t
 				{
-					if (iter["id"sv] == "ToggleQuickBoy" && iter["modName"sv] == "BakaFullscreenPipboy")
+					std::string  id;
+					std::int32_t keycode;
+					std::string  modName;
+					std::int32_t modifiers;
+				};
+
+				std::vector<keybind_t> keybinds;
+				std::int32_t           version;
+			};
+
+			keybinds_t data{};
+			if (!glz::read_file_json(data, "Data/MCM/Settings/Keybinds.json", std::string{}))
+			{
+				for (auto& iter : data.keybinds)
+				{
+					if (iter.id == "ToggleQuickBoy"sv && iter.modName == "BakaFullscreenPipboy"sv)
 					{
-						Runtime::QuickBoyKey = iter["keycode"sv];
+						MCM::Settings::Runtime::QuickBoyKey = iter.keycode;
 						break;
 					}
 				}
 			}
-			catch (std::exception& a_exception)
-			{
-				Runtime::QuickBoyKey = 0;
-				F4SE::log::debug("{:s}"sv, a_exception.what());
-			}
-			*/
 		}
 	};
 }
