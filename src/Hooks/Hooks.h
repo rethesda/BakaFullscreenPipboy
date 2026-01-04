@@ -145,10 +145,15 @@ public:
 					Scaleform::GFx::Value root;
 					if (PipboyMenu->uiMovie && PipboyMenu->uiMovie->GetVariable(&root, "root"))
 					{
+						auto scaleX = MCM::Settings::Pipboy::fPipboyMenuScaleX.GetValue();
+						auto scaleY = MCM::Settings::Pipboy::fPipboyMenuScaleY.GetValue();
+						if (scaleY == 0.0f)
+							scaleY = scaleX;
+
 						root.SetMember("x", MCM::Settings::Pipboy::fPipboyMenuX.GetValue());
 						root.SetMember("y", MCM::Settings::Pipboy::fPipboyMenuY.GetValue());
-						root.SetMember("scaleX", MCM::Settings::Pipboy::fPipboyMenuScale.GetValue());
-						root.SetMember("scaleY", MCM::Settings::Pipboy::fPipboyMenuScale.GetValue());
+						root.SetMember("scaleX", scaleX);
+						root.SetMember("scaleY", scaleY);
 					}
 
 					Renderer->Enable();
@@ -941,10 +946,15 @@ private:
 			Scaleform::GFx::Value root;
 			if (GameMenuBase->uiMovie && GameMenuBase->uiMovie->GetVariable(&root, "root"))
 			{
+				auto scaleX = MCM::Settings::Pipboy::fPipboyMenuScaleX.GetValue();
+				auto scaleY = MCM::Settings::Pipboy::fPipboyMenuScaleY.GetValue();
+				if (scaleY == 0.0f)
+					scaleY = scaleX;
+
 				root.SetMember("x", MCM::Settings::Pipboy::fPipboyMenuX.GetValue());
 				root.SetMember("y", MCM::Settings::Pipboy::fPipboyMenuY.GetValue());
-				root.SetMember("scaleX", MCM::Settings::Pipboy::fPipboyMenuScale.GetValue());
-				root.SetMember("scaleY", MCM::Settings::Pipboy::fPipboyMenuScale.GetValue());
+				root.SetMember("scaleX", scaleX);
+				root.SetMember("scaleY", scaleY);
 			}
 		}
 
@@ -1340,6 +1350,12 @@ private:
 				a_this->openAnimEvent = "pipboyOpened"sv;
 				a_this->OnPipboyOpenAnim();
 				a_this->OnPipboyOpened();
+
+				if (auto PlayerControls = RE::PlayerControls::GetSingleton())
+				{
+					PlayerControls->DoAction(RE::DEFAULT_OBJECT::kActionMoveStop, RE::ActionInput::ACTIONPRIORITY::kTry);
+					MCM::Settings::Runtime::bWeaponDrawn = PlayerControls->DoAction(RE::DEFAULT_OBJECT::kActionSheath, RE::ActionInput::ACTIONPRIORITY::kTry);
+				}
 			}
 		}
 
@@ -1417,6 +1433,15 @@ private:
 					{
 						a_this->PlayItemAnimOnClose();
 						a_this->itemAnimOnClose = nullptr;
+					}
+				}
+
+				if (MCM::Settings::Runtime::bWeaponDrawn)
+				{
+					MCM::Settings::Runtime::bWeaponDrawn = false;
+					if (auto PlayerControls = RE::PlayerControls::GetSingleton())
+					{
+						PlayerControls->DoAction(RE::DEFAULT_OBJECT::kActionDraw, RE::ActionInput::ACTIONPRIORITY::kTry);
 					}
 				}
 			}

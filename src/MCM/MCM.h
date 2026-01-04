@@ -23,7 +23,8 @@ namespace MCM
 			inline static REX::INI::F32 fBackgroundAlpha{ "Pipboy", "fBackgroundAlpha", 1.0f };
 			inline static REX::INI::F32 fPipboyMenuX{ "Pipboy", "fPipboyMenuX", 35.0f };
 			inline static REX::INI::F32 fPipboyMenuY{ "Pipboy", "fPipboyMenuY", 0.0f };
-			inline static REX::INI::F32 fPipboyMenuScale{ "Pipboy", "fPipboyMenuScale", 0.92f };
+			inline static REX::INI::F32 fPipboyMenuScaleX{ "Pipboy", "fPipboyMenuScaleX", 0.92f };
+			inline static REX::INI::F32 fPipboyMenuScaleY{ "Pipboy", "fPipboyMenuScaleY", 0.0f };
 			inline static REX::INI::F32 fPipboyBackgroundX{ "Pipboy", "fPipboyBackgroundX", 42.0f };
 			inline static REX::INI::F32 fPipboyBackgroundY{ "Pipboy", "fPipboyBackgroundY", 0.0f };
 			inline static REX::INI::F32 fPipboyBackgroundScale{ "Pipboy", "fPipboyBackgroundScale", 0.90f };
@@ -48,6 +49,7 @@ namespace MCM
 			inline static bool         bQuickBoy{ true };
 			inline static bool         bQuickBoyTransition{ false };
 			inline static bool         bPlayClose{ false };
+			inline static bool         bWeaponDrawn{ false };
 			inline static std::int32_t QuickBoyKey{ 0 };
 		};
 

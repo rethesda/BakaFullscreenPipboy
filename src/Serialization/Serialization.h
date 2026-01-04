@@ -10,6 +10,7 @@ namespace Serialization
 		{
 			MCM::Settings::Runtime::bQuickBoy = true;
 			// MCM::Settings::Runtime::bQuickBoyTransition = false;
+			// MCM::Settings::Runtime::bWeaponDrawn = false;
 		}
 
 		void SaveCallback([[maybe_unused]] const F4SE::SerializationInterface* a_intfc)
